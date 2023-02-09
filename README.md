@@ -1,1 +1,1 @@
-Creado con *React*, *Typescript* y *Vite*.
+Creado con _React_, _Typescript_ y _Vite_.
