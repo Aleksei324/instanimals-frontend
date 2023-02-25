@@ -9,8 +9,10 @@ import "./styles/global.css";
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
+    {/** Layout que se verá en todas las páginas */}
       <Layout>
         <Routes>
+          {/** Rutas a las diferentes paginas */}
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="*" element={<NotFound />} />
