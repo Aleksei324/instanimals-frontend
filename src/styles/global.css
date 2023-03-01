@@ -1,69 +1,72 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  --light-bg: #F0F2F5;
+  --dark-bg: #202235;
+  --light-component: #FFFFFF;
+  --dark-component: #303245;
+  --primary-colour: #EBBC1C;
+  --secondary-colour: #d3a81a;
+  --light-text: #101215;
+  --dark-text: #F0F2F5;
+  --text-in-colour: #FFFFFF;
+
+  font-family: Inter, Helvetica, sans-serif;
   font-weight: 400;
+  text-align: center;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: var(--dark-text);
+  background-color: var(--dark-bg);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
 }
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--primary-colour);
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: var(--secondary-colour);
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
+.yellow_button {
+  border-radius: 1rem;
+  border: none;
+  padding: 0.5rem 2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
   font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+  background-color: var(--primary-colour);
+  color: var(--text-in-colour);
+  transition-duration: 0.4s;
 }
-button:hover {
-  border-color: #646cff;
+.yellow_button:hover {
+  background-color: var(--secondary-colour);
+  box-shadow: 0.5rem 0.5rem 1rem 0.1rem #00000010;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+.component {
+  background-color: var(--dark-component);
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 1rem;
+  width:fit-content;
+  height: fit-content;
+  box-shadow: 0.5rem 0.5rem 1rem 0.1rem #00000010;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: var(--light-text);
+    background-color: var(--light-bg);
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+  .component {
+    background-color: var(--light-component);
   }
 }

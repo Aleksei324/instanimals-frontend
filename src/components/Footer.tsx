@@ -1,3 +1,12 @@
+import '../styles/Footer.css'
+
 export const Footer = () => {
-  return <footer>- Footer test -</footer>;
+  return (
+    <footer className='footer'>
+      Diamond Dogs team<br/>
+      Christian David Posada & Camilo Franco Moya <br/>
+      Programación en ambiente web <br/>
+      Universidad Autonoma de Occidente
+    </footer>
+  )
 };

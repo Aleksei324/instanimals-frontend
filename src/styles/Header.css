@@ -1,0 +1,14 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1rem;
+  margin: 0;
+  background-color: var(--dark-component);
+}
+
+@media (prefers-color-scheme: light) {
+  .header {
+    background-color: var(--light-component);
+  }
+}

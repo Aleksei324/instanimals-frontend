@@ -1,0 +1,13 @@
+.footer {
+  width: 100%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin: 0;
+  background-color: var(--dark-component);
+}
+
+@media (prefers-color-scheme: light) {
+  .footer {
+    background-color: var(--light-component);
+  }
+}
