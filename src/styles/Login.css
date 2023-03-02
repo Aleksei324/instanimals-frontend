@@ -20,9 +20,13 @@
   align-items: flex-end;
 }
 .texto-abajo{
-    display: flex;
-    justify-content: center;
-    
+  padding: 0.5rem;
+}
+.registro{
+  display: flex;
+  flex-direction: column;
+  
+  
 }
 form {
   display: flex;
@@ -101,11 +105,16 @@ input[type="submit"]:hover {
 }
 
 .component-register {
+  display: grid;
   border-radius: 1rem;
   padding: 1rem;
   margin: 1rem;
   width:fit-content;
   height: fit-content;
+  align-items: center;
+  justify-items: center;
+  
+  
   
 }
 @media (prefers-reduced-motion: no-preference) {

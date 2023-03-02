@@ -19,6 +19,7 @@ export const Login = () => {
         <input type="password" id="inputpwd" name="inputpwd" />
         <input type="submit" value="Iniciar Sesión" />
       </form>
+      <div className="registro">
       <div className="texto-abajo">
         ¿Aún no tienes una <a onClick={() => setButtonPopup(true)} className="url">Cuenta</a>?
         <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
@@ -64,6 +65,7 @@ export const Login = () => {
         <input type="submit" value="Registrarse" />
       </form>
         </Popup>
+        </div>
         </div>
         </div>
       <br/>
