@@ -1,0 +1,30 @@
+.uploadImage {
+  position: fixed;
+  width: 80%;
+  top: 5rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  opacity: 0.9;
+  z-index: 3;
+  padding: 1rem;
+}
+
+.visibleUpload {
+  display: flex;
+}
+
+.inputUpload {
+  width: 40rem;
+  padding: 0.5rem;
+  margin-left: 2rem;
+}
+
+.zoneUpload {
+  border: 1px dashed var(--primary-colour);
+  padding: 3rem;
+}
+
+.publicarUpload {
+  width: 100%;
+}

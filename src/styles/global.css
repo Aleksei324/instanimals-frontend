@@ -74,6 +74,25 @@ body {
   color: lightgrey;
 }
 
+.roundedImages {
+  border-radius: 100%;
+}
+
+.sombra {
+  background-color: black;
+  opacity: 0.2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: var(--light-text);

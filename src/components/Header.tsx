@@ -21,7 +21,7 @@ export const Header = () => {
 
         <Link className="spaceHeader" to="/profile">
           Mi perfil 
-          <img className="iconLinksHeader fotoHeader" src={getFotoPerfil} alt="Foto de perfil" width='32' height='32'/>
+          <img className="iconLinksHeader roundedImages" src={getFotoPerfil} alt="Foto de perfil" width='32' height='32'/>
         </Link>
       </div>
     </header>
