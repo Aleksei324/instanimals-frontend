@@ -1,0 +1,9 @@
+.tyc {
+  text-align: justify;
+  padding: 5rem;
+  margin: 5rem;
+}
+
+.tyc > h1 {
+  text-align: center;
+}

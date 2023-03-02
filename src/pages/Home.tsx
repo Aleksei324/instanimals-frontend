@@ -1,20 +1,21 @@
-import { useState } from "react";
-import { Layout } from "../components";
+import { FeedHome, Layout, UploadImageHome } from "../components";
 import "../styles/Home.css";
 
 export const Home = () => {
-  const [count, setCount] = useState(0);
 
   return (
     <Layout>
       <div className="home">
+        <UploadImageHome/>
         <br/>
         <br/>
         <br/>
-        <h1>Probando aaaaaaaaaaaaaaaaaa</h1>
-        <button className="yellow_button" onClick={() => setCount((count) => count + 1)}>
-          Count is {count}
-        </button>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <FeedHome/>
       </div>
     </Layout>
   );

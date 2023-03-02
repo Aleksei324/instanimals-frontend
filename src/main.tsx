@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { Home, Cart, Login, Profile, NotFound } from "./pages";
+import { Home, Cart, Login, Profile, NotFound, Tyc } from "./pages";
 import "./styles/global.css";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
@@ -15,6 +15,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
           <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/tyc" element={<Tyc/>}/>
         </Routes>
     </BrowserRouter>
   </React.StrictMode>

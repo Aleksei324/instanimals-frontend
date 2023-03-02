@@ -6,7 +6,8 @@ export const Footer = () => {
       Diamond Dogs team<br/>
       Christian David Posada & Camilo Franco Moya <br/>
       Programación en ambiente web <br/>
-      Universidad Autonoma de Occidente
+      Universidad Autonoma de Occidente<br/>
+      Iconos por Flaticon
     </footer>
   )
 };
