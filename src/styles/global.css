@@ -54,11 +54,24 @@ body {
 .component {
   background-color: var(--dark-component);
   border-radius: 1rem;
-  padding: 1rem;
-  margin: 1rem;
   width:fit-content;
   height: fit-content;
   box-shadow: 0.5rem 0.5rem 1rem 0.1rem #00000010;
+}
+
+.yellowInputText {
+  border: 1px solid var(--primary-colour);
+  border-radius: 1rem;
+
+  font-family: Inter, Helvetica, sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.yellowInputText:hover {
+  border: 1px solid var(--secondary-colour);
+}
+::placeholder {
+  color: lightgrey;
 }
 
 @media (prefers-color-scheme: light) {

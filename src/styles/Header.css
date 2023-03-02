@@ -2,9 +2,49 @@
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 1rem;
+  padding: 0.5rem;
   margin: 0;
+
   background-color: var(--dark-component);
+  opacity: 0.9;
+  border-bottom: 1px solid var(--primary-colour);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.buscadorHeader {
+  width: 30rem;
+  padding: 0.5rem;
+
+  background-image: url('/icons/search.png');
+  padding-left: 3rem;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+.titleHeader {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.spaceHeader {
+  margin-left: 3rem;
+}
+
+.linksHeader {
+  margin-right: 1rem;
+}
+
+.iconLinksHeader {
+  vertical-align: middle;
+  margin-left: 0.3rem;
+}
+
+.fotoHeader {
+  border-radius: 1rem;
 }
 
 @media (prefers-color-scheme: light) {
