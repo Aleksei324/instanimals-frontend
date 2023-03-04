@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'IntelLocal';
+  src: local('IntelLocal'), url(/fonts/Inter-VariableFont_slnt,wght.ttf) format('truetype');
+}
+
 :root {
   --light-bg: #F0F2F5;
   --dark-bg: #202235;
@@ -9,7 +14,7 @@
   --dark-text: #F0F2F5;
   --text-in-colour: #FFFFFF;
 
-  font-family: Inter, Helvetica, sans-serif;
+  font-family: IntelLocal, Inter, Helvetica, sans-serif;
   font-weight: 400;
   text-align: center;
 
@@ -17,8 +22,12 @@
   color: var(--dark-text);
   background-color: var(--dark-bg);
 
-  font-synthesis: none;
   text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  padding: 0;
 }
 
 a {
@@ -30,15 +39,9 @@ a:hover {
   color: var(--secondary-colour);
 }
 
-body {
-  margin: 0;
-  padding: 0;
-}
-
-.yellow_button {
+.yellowButtonG {
   border-radius: 1rem;
   border: none;
-  padding: 0.5rem 2rem;
   font-size: 1.5rem;
   font-weight: bold;
   font-family: inherit;
@@ -46,12 +49,31 @@ body {
   color: var(--text-in-colour);
   transition-duration: 0.4s;
 }
-.yellow_button:hover {
+.yellowButtonG:hover {
   background-color: var(--secondary-colour);
   box-shadow: 0.5rem 0.5rem 1rem 0.1rem #00000010;
 }
 
-.component {
+.yellowInputTextG {
+  border: 1px solid var(--primary-colour);
+  border-radius: 1rem;
+
+  font-family: IntelLocal, Inter, Helvetica, sans-serif;
+  font-size: 1.5rem;
+}
+.yellowInputTextG:hover {
+  border: 1px solid var(--secondary-colour);
+}
+::placeholder {
+  font-family: IntelLocal, Inter, Helvetica, sans-serif;
+  color: lightgrey;
+}
+
+.roundedImagesG {
+  border-radius: 100%;
+}
+
+.componentG {
   background-color: var(--dark-component);
   border-radius: 1rem;
   width:fit-content;
@@ -59,38 +81,33 @@ body {
   box-shadow: 0.5rem 0.5rem 1rem 0.1rem #00000010;
 }
 
-.yellowInputText {
-  border: 1px solid var(--primary-colour);
-  border-radius: 1rem;
-
-  font-family: Inter, Helvetica, sans-serif;
-  font-size: 1.5rem;
-  text-align: center;
-}
-.yellowInputText:hover {
-  border: 1px solid var(--secondary-colour);
-}
-::placeholder {
-  color: lightgrey;
-}
-
-.roundedImages {
-  border-radius: 100%;
-}
-
-.sombra {
+.sombraG {
   background-color: black;
-  opacity: 0.2;
+  opacity: 0.25;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 2;
+  animation: 1s fadeInSombra;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeInSombra {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 0.2;
+  }
 }
 
-.hidden {
+.hiddenG {
   visibility: hidden;
+}
+.ultraHiddenG {
+  display: none;
 }
 
 @media (prefers-color-scheme: light) {
@@ -98,7 +115,7 @@ body {
     color: var(--light-text);
     background-color: var(--light-bg);
   }
-  .component {
+  .componentG {
     background-color: var(--light-component);
   }
 }

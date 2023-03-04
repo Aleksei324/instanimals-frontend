@@ -18,6 +18,7 @@
 .buscadorHeader {
   width: 30rem;
   padding: 0.5rem;
+  text-align: center;
 
   background-image: url('/icons/search.png');
   padding-left: 3rem;

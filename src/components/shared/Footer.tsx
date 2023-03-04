@@ -1,4 +1,4 @@
-import '../styles/Footer.css'
+import '../../styles/shared/Footer.css'
 
 export const Footer = () => {
   return (

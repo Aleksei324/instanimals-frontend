@@ -1,4 +1,5 @@
-import { Footer, Header } from "./";
+import { Footer } from "./Footer";
+import { Header } from "./Header"
 
 interface layoutProps {
   children: JSX.Element;

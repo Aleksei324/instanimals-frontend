@@ -14,7 +14,6 @@ export const Home = () => {
         <br/>
         <br/>
         <br/>
-        <br/>
         <FeedHome/>
       </div>
     </Layout>

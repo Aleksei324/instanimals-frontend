@@ -1,63 +1,45 @@
 import { ChangeEvent, useState } from 'react';
 import { Link } from 'react-router-dom'
 import '../styles/UploadImageHome.css'
+import { UploadZoneHome } from './UploadZoneHome';
 
 export const UploadImageHome = () => {
 
-  const [getFotoPerfil, setFotoPerfil] = ['/Image_by_LaBruixa_from_Pixabay.png', ''] //TODO useProfileImage()
+  const [getFotoPerfil, setFotoPerfil] = ['/placeholders/placeholder-posts.png', ''] //TODO useProfileImage()
   const [getInteracted, setInteracted] = useState(false);
   const [getValueInput, setValueInput] = useState('');
 
   const inputChanged = (evento: ChangeEvent<HTMLInputElement>) => {
     setValueInput(evento.target.value)
-    setInteracted(true)
   }
 
   return (
     <>
-      {
-        getInteracted ?
-        <div className="sombra" onClick={() => setInteracted(false)}/>
-        :
-        <div/>
-      }
-      <div className="component uploadImage">
+      <div className={getInteracted ? "sombraG":"hiddenG"} onClick={() => setInteracted(false)}/>
+
+      <div className="componentG uploadImage">
 
         <div className='visibleUpload'>
 
           <Link to="/profile">
-            <img className='roundedImages' src={getFotoPerfil} alt="Foto de perfil" width='56' height='56'/>
+            <img className='roundedImagesG'
+              src={getFotoPerfil}
+              alt="Foto de perfil"
+              width='56' height='56'/>
           </Link>
 
           <input 
-            className="yellowInputText inputUpload"
-            id='busqueda' type='text'
+            className="yellowInputTextG inputUpload"
+            type='text'
             placeholder='¿Qué ha hecho tu mascota hoy?'
             value={getValueInput}
             onChange={(evt) => inputChanged(evt)}
-            onClick={() => setInteracted(false)}/>
+            onFocus={() => {setInteracted(true)}}/>
         </div>
 
-        {
-          getInteracted ?
-          <div>
-            <br/>
-            <div className='zoneUpload'>
-            
-              <label htmlFor='filezone'>
-                Haz click aqui para <br/>
-                subir tu imagen <br/>
-                &#40;PNG o JPG&#41;<br/>
-              </label>
-              <input id='filezone' className='hidden' type='file' name='image' accept="image/png, image/jpeg"/>
-
-            </div>
-            <br/>
-            <button className='yellow_button publicarUpload'>Publicar</button>
-          </div>
-          :
-          <div/>
-        }
+        <div className={getInteracted?'':'ultraHiddenG'}>
+          <UploadZoneHome/>
+        </div>
       </div>
     </>
   )

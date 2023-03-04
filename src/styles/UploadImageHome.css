@@ -18,13 +18,5 @@
   width: 40rem;
   padding: 0.5rem;
   margin-left: 2rem;
-}
-
-.zoneUpload {
-  border: 1px dashed var(--primary-colour);
-  padding: 3rem;
-}
-
-.publicarUpload {
-  width: 100%;
+  text-align: center;
 }

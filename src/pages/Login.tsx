@@ -1,100 +1,67 @@
-import { Footer } from "../components";
-import '../styles/Login.css';
-import Popup from '../components/Popup';
+import { Footer, Register, Popup } from "../components";
 import { useState } from "react";
+import '../styles/Login.css';
 
 export const Login = () => {
-  const [buttonPopup, setButtonPopup] = useState(false);
-  const [buttonPopup1, setButtonPopup1] = useState(false);
+  const [getRegistroUsuario, setRegistroUsuario] = useState(false);
+  const [getRegistroVet, setRegistroVet] = useState(false);
+
+  const turnBothOff = () => {
+    setRegistroUsuario(false)
+    setRegistroVet(false)
+  }
+
   return (
     <div className="login">
-      <div className="img_bg"></div>
-      <div className="diagonal_bg"></div>
-      <h1 className="titulo">INSTANIMALS</h1>
-      <div className="caja_sesion">
-      <form className="component">
-        <label htmlFor="inputmail">Correo electrónico</label><br/>
-        <input type="text" id="inputmail" name="inputmail" /><br/><br/>
-        <label htmlFor="inputpwd">Contraseña</label><br/>
-        <input type="password" id="inputpwd" name="inputpwd" />
-        <input type="submit" value="Iniciar Sesión" />
-      </form>
-      <div className="registro">
-      <div className="texto-abajo">
-        ¿Aún no tienes una <a onClick={() => setButtonPopup(true)} className="url">Cuenta</a>?
-        <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
-        <h1>Registro de Mascota</h1>
-        <p>Unete a nuestra gran comunidad</p>
-        <form className="component-register">
-        <label htmlFor="inputmail">Correo electrónico</label><br/>
-        <input type="text" id="inputmail" name="inputmail" /><br/><br/>
-        <label htmlFor="inputpwd">Contraseña</label><br/>
-        <input type="password" id="inputpwd" name="inputpwd" />
-          <div className="cerca">
-          <label htmlFor="inputmail">Nombre</label><br/>
-          <input type="text" id="inputmail" name="inputmail" /><br/><br/>
-          <label htmlFor="inputmail">Especie</label><br/>
-          <input type="text" id="inputmail" name="inputmail" /><br/><br/>
-          </div>
-          <label htmlFor="inputpwd">Fecha de nacimiento</label><br/>
-        <input type="date" id="inputpwd" name="inputpwd" />
-        <p>Al hacer click en "Registrarse", aceptas nuestras Condiciones, la politica de privacidad y de cookies</p>
-        <input type="submit" value="Registrarse" />
-      </form>
+
+      <div className="img_bgLogin"></div>
+      <div className="diagonal_bgLogin"></div>
+
+      {
+        getRegistroUsuario ?
+        <Popup closeFunction={() => turnBothOff()}>
+          <Register tipo='usuario'/>
         </Popup>
+        :
+        <div/>
+      }
+
+      {
+        getRegistroVet ?
+        <Popup closeFunction={() => turnBothOff()}>
+          <Register tipo='vet'/>
+        </Popup>
+        :
+        <div/>
+      }
+
+      <div className="visibleLogin">
+        <h1>INSTANIMALS</h1>
+
+        <div>
+          <div className="componentG">
+            <form className="componentLogin">
+              <div>
+                <label htmlFor="inputmail">Correo electrónico</label><br/>
+                <input className="yellowInputTextG inputFullLogin" type="text" id="inputmail" name="mail" /><br/>
+              </div>
+
+              <div>
+                <label htmlFor="inputpwd">Contraseña</label><br/>
+                <input className="yellowInputTextG inputFullLogin" type="password" id="inputpwd" />
+              </div>
+
+              <button className="yellowButtonG buttonLogin" type="submit">Iniciar sesión</button>
+            </form>
+          </div>
+
+          <div className="texto-abajoLogin">
+            ¿Aún no tienes una <a onClick={() => setRegistroUsuario(true)}>cuenta</a>? <br/>
+            ¿Eres una marca <a onClick={() => setRegistroVet(true)}>veterinaria</a>?
+          </div>
+        </div>
+
       </div>
-      <div className="texto-abajo">
-        ¿Eres una marca <a onClick={() => setButtonPopup1(true)} className="url">Veterinaria</a>?
-        <Popup trigger={buttonPopup1} setTrigger={setButtonPopup1}>
-        <h1>Registro de marca</h1>
-        <p>Millones de oportunidades para tu negocio</p>
-        <form className="component-register">
-        <label htmlFor="inputmail">Correo electrónico</label><br/>
-        <input type="text" id="inputmail" name="inputmail" /><br/><br/>
-        <label htmlFor="inputpwd">Contraseña</label><br/>
-        <input type="password" id="inputpwd" name="inputpwd" />
-          <div className="cerca">
-          <label htmlFor="inputmail">Nombre</label><br/>
-          <input type="text" id="inputmail" name="inputmail" /><br/><br/>
-          <label htmlFor="inputmail">Especie</label><br/>
-          <input type="text" id="inputmail" name="inputmail" /><br/><br/>
-          </div>
-          <label htmlFor="inputpwd">Fecha de nacimiento</label><br/>
-        <input type="date" id="inputpwd" name="inputpwd" />
-        <p>Al hacer click en "Registrarse", aceptas nuestras Condiciones, la politica de privacidad y de cookies</p>
-        <input type="submit" value="Registrarse" />
-      </form>
-        </Popup>
-        </div>
-        </div>
-        </div>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
       <Footer/>
     </div>
   );

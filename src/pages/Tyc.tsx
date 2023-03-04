@@ -4,7 +4,7 @@ import "../styles/Tyc.css"
 export const Tyc = () => {
   return (
       <div>
-        <div className="tyc component">
+        <div className="tyc componentG">
           <h1>Términos y condiciones</h1>
 
           <h3>Requisitos de edad mínima</h3>

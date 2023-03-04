@@ -1,0 +1,8 @@
+.titlePopup {
+  text-align: left;
+}
+
+.cerca {
+  display: flex;
+  justify-content: space-around;
+}

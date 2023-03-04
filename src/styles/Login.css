@@ -1,87 +1,54 @@
-.login {
-
+.login > footer {
+  position: fixed;
+  bottom: 0;
 }
 
-.titulo {
+.visibleLogin {
   display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10%;
+}
+
+.visibleLogin > h1 {
   color: var(--primary-colour);
   font-size: 5rem;
-  justify-content: center;
-  
-  
-  
- 
 }
 
-
-.caja_sesion{
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+.componentLogin {
+  padding: 1rem;
+  width: 40rem;
 }
-.texto-abajo{
+
+.componentLogin > * {
+  margin: 1rem;
+}
+
+.componentLogin > * > label, .componentLogin > * > * > label {
+  font-size: 2rem;
+}
+
+.inputFullLogin {
+  width: 90%;
   padding: 0.5rem;
 }
-.registro{
-  display: flex;
-  flex-direction: column;
-  
-  
-}
-form {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-label {
-  margin: 0;
-  padding: 0;
-  font-weight: bold;
-  display: block;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 32px;
-  line-height: 39px;
-  text-align: center;
-}
-input[type="text"], input[type="password"], input[type="date"] {
-  border: 0.0625rem solid #EBBC1C;
-  border-radius: 1.125rem;
-  background: transparent;
-  width: 32.688rem;
-  height: 4.688rem;
-  outline: none;
-  color: #000000;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 2rem;
-  line-height: 2.4375rem;
-  text-align: center;
+
+.inputHalfLogin {
+  width: 90%;
+  padding: 0.5rem;
 }
 
-input[type="submit"] {
-  border: none;
-  outline: none;
-  margin-top: 2rem;
-  width: 32.688rem;
-  height: 4.688rem;
-  background: #EBBC1C;
-  color: #fff;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 2rem;
-  line-height: 2.4375rem;
-  text-align: center;
-  border-radius: 1.25rem;
-}
-input[type="submit"]:hover {
-  cursor: pointer;
-  background: #ffc107;
-  color: #000;
+.texto-abajoLogin{
+  margin-top: 1rem;
 }
 
-.img_bg {
-  background-image: url('/Image_by_LaBruixa_from_Pixabay_dark.png');
+.buttonLogin {
+  width: 90%;
+  padding: 1rem;
+}
+
+.img_bgLogin {
+  background-image: url('/bg-login-by-LaBruixa-Pixabay-dark.png');
   background-repeat: no-repeat;
   background-position: center;
   bottom:0;
@@ -91,8 +58,7 @@ input[type="submit"]:hover {
   top: 0;
   z-index: -2;
 }
-
-.diagonal_bg {
+.diagonal_bgLogin {
   animation:slide 30s ease-in-out infinite alternate;
   background-image: linear-gradient(-70deg, var(--dark-bg) 50%, #00000000 50%);
   bottom:0;
@@ -102,20 +68,6 @@ input[type="submit"]:hover {
   right:-50%;
   top:0;
   z-index:-1;
-}
-
-.component-register {
-  display: grid;
-  border-radius: 1rem;
-  padding: 1rem;
-  margin: 1rem;
-  width:fit-content;
-  height: fit-content;
-  align-items: center;
-  justify-items: center;
-  
-  
-  
 }
 @media (prefers-reduced-motion: no-preference) {
   @keyframes slide {
@@ -129,10 +81,10 @@ input[type="submit"]:hover {
 }
 
 @media (prefers-color-scheme: light) {
-  .img_bg {
-    background-image: url('/Image_by_LaBruixa_from_Pixabay.png');
+  .img_bgLogin {
+    background-image: url('/bg-login-by-LaBruixa-Pixabay-light.png');
   }
-  .diagonal_bg {
+  .diagonal_bgLogin {
     background-image: linear-gradient(-70deg, var(--light-bg) 50%, #00000000 50%);
   }
 }

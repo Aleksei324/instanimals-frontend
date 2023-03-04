@@ -1,3 +1,43 @@
 .post {
   margin: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.titlePost {
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+}
+.titlePost > p {
+  margin-left: 1rem;
+  font-size: 1.5rem;
+}
+
+.imagePost {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border-radius: 1rem;
+}
+
+.likeSectionPost {
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+}
+.likeSectionPost > button {
+  padding: 0.5rem;
+}
+.likeSectionPost > input {
+  margin-left: 1.5rem;
+  width: 83%;
+  padding: 0.5rem;
+}
+
+.comentariosPost {
+  text-align: left;
+  margin: 2rem;
+  width: 20rem;
 }
