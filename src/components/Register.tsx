@@ -18,7 +18,7 @@ export const Register = ({ tipo }: poputProps) => {
 
             <div>
               <label htmlFor="inputmail">Correo electrónico</label><br/>
-              <input className="yellowInputTextG inputFullLogin" type="text" id="inputmail" name="mail" />
+              <input className="yellowInputTextG inputFullLogin" type="email" id="inputmail" name="mail" />
             </div>
 
             <div>
@@ -54,7 +54,7 @@ export const Register = ({ tipo }: poputProps) => {
 
             <div>
               <label htmlFor="inputmail">Correo electrónico</label><br/>
-              <input className="yellowInputTextG inputFullLogin" type="text" id="inputmail" name="mail" />
+              <input className="yellowInputTextG inputFullLogin" type="email" id="inputmail" name="mail" />
             </div>
 
             <div>

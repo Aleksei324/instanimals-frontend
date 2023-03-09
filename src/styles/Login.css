@@ -31,11 +31,13 @@
 .inputFullLogin {
   width: 90%;
   padding: 0.5rem;
+  font-size: 1.5rem;
 }
 
 .inputHalfLogin {
   width: 90%;
   padding: 0.5rem;
+  font-size: 1.5rem;
 }
 
 .texto-abajoLogin{

@@ -43,7 +43,7 @@ export const Login = () => {
             <form className="componentLogin">
               <div>
                 <label htmlFor="inputmail">Correo electrónico</label><br/>
-                <input className="yellowInputTextG inputFullLogin" type="text" id="inputmail" name="mail" /><br/>
+                <input className="yellowInputTextG inputFullLogin" type="email" id="inputmail" name="mail" /><br/>
               </div>
 
               <div>

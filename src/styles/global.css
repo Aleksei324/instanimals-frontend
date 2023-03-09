@@ -59,7 +59,6 @@ a:hover {
   border-radius: 1rem;
 
   font-family: IntelLocal, Inter, Helvetica, sans-serif;
-  font-size: 1.5rem;
 }
 .yellowInputTextG:hover {
   border: 1px solid var(--secondary-colour);
@@ -67,6 +66,12 @@ a:hover {
 ::placeholder {
   font-family: IntelLocal, Inter, Helvetica, sans-serif;
   color: lightgrey;
+}
+
+.yellowLabelG {
+  color: var(--primary-colour);
+  font-size: 1.5rem;
+  margin-right: 1rem;
 }
 
 .roundedImagesG {

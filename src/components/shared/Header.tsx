@@ -10,7 +10,8 @@ export const Header = () => {
       <Link className="titleHeader" to="/"> INSTANIMALS </Link>
 
       <form>
-        <input className="yellowInputTextG buscadorHeader" id='busqueda' name="q" type='text' placeholder='¿Qué buscas?'/>
+        <label className="yellowLabelG" htmlFor="busqueda">Buscar</label>
+        <input className="yellowInputTextG buscadorHeader" id='busqueda' name="q" type='search' placeholder='¿Qué buscas?'/>
       </form>
 
       <div className="linksHeader">
