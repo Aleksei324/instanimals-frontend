@@ -1,8 +1,15 @@
 import { PostHome } from "./";
 
-export const FeedHome = () => {
+interface feedProps {
+  profile: string
+}
+
+export const FeedHome = ({profile}: feedProps) => {
+
   return (
     <div>
+      <PostHome/>
+      <PostHome/>
       <PostHome/>
       <PostHome/>
       <PostHome/>

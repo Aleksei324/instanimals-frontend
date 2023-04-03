@@ -7,7 +7,7 @@ export const Footer = () => {
       Christian David Posada & Camilo Franco Moya <br/>
       Programación en ambiente web <br/>
       Universidad Autonoma de Occidente<br/>
-      Iconos por Flaticon
+      Iconos por Freepik en Flaticon
     </footer>
   )
 };

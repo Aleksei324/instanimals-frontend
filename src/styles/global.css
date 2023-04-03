@@ -10,6 +10,8 @@
   --dark-component: #303245;
   --primary-colour: #EBBC1C;
   --secondary-colour: #d3a81a;
+  --error-colour: #EB1C41;
+  --error-secondary-colour: #db1a3d;
   --light-text: #101215;
   --dark-text: #F0F2F5;
   --text-in-colour: #FFFFFF;
@@ -34,29 +36,29 @@ a {
   font-weight: 500;
   color: var(--primary-colour);
   text-decoration: inherit;
+  transition-duration: 0.5s;
 }
 a:hover {
   color: var(--secondary-colour);
 }
 
 .yellowButtonG {
-  border-radius: 1rem;
+  border-radius: 1.5rem;
   border: none;
   font-size: 1.5rem;
   font-weight: bold;
   font-family: inherit;
   background-color: var(--primary-colour);
   color: var(--text-in-colour);
-  transition-duration: 0.4s;
+  transition-duration: 0.5s;
 }
 .yellowButtonG:hover {
   background-color: var(--secondary-colour);
-  box-shadow: 0.5rem 0.5rem 1rem 0.1rem #00000010;
 }
 
 .yellowInputTextG {
   border: 1px solid var(--primary-colour);
-  border-radius: 1rem;
+  border-radius: 1.5rem;
 
   font-family: IntelLocal, Inter, Helvetica, sans-serif;
 }
@@ -70,8 +72,14 @@ a:hover {
 
 .yellowLabelG {
   color: var(--primary-colour);
-  font-size: 1.5rem;
-  margin-right: 1rem;
+  transition-duration: 0.5s;
+}
+.yellowLabelG:hover {
+  color: var(--secondary-colour);
+}
+
+.formLabelG {
+  font-size: 0.5rem;
 }
 
 .roundedImagesG {
@@ -80,10 +88,9 @@ a:hover {
 
 .componentG {
   background-color: var(--dark-component);
-  border-radius: 1rem;
+  border-radius: 2rem;
   width:fit-content;
   height: fit-content;
-  box-shadow: 0.5rem 0.5rem 1rem 0.1rem #00000010;
 }
 
 .sombraG {
@@ -113,6 +120,11 @@ a:hover {
 }
 .ultraHiddenG {
   display: none;
+}
+
+.onlyFooterG > footer {
+  position: fixed;
+  bottom: 0;
 }
 
 @media (prefers-color-scheme: light) {

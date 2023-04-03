@@ -12,8 +12,8 @@ export const Register = ({ tipo }: poputProps) => {
         tipo === 'usuario'?
           <>
             <div className="titlePopup">
-              <h1>Registro de mascota</h1>
-              <p>¡Únete a nuestra gran comunidad!</p>
+              <span className="titleRegister">Registro de mascota</span><br/>
+              ¡Únete a nuestra gran comunidad!
             </div>
 
             <div>
@@ -48,8 +48,8 @@ export const Register = ({ tipo }: poputProps) => {
         :
           <>
             <div className="titlePopup">
-              <h1>Registro de marca</h1>
-              <p>Millones de oportunidades para su negocio.</p>
+              <span className="titleRegister">Registro de marca</span><br/>
+              Millones de oportunidades para su negocio.
             </div>
 
             <div>

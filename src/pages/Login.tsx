@@ -12,7 +12,7 @@ export const Login = () => {
   }
 
   return (
-    <div className="login">
+    <div className="login onlyFooterG">
 
       <div className="img_bgLogin"></div>
       <div className="diagonal_bgLogin"></div>
@@ -36,7 +36,14 @@ export const Login = () => {
       }
 
       <div className="visibleLogin">
-        <h1>INSTANIMALS</h1>
+        <div>
+          <h1>INSTANIMALS</h1>
+          <p>
+            Crea y comparte historias, situaciones graciosas o<br/>
+            aventuras sobre tu mascota en una red social<br/>
+            especialmente creada para ella.
+          </p>
+        </div>
 
         <div>
           <div className="componentG">

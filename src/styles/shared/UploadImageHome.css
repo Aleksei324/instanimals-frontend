@@ -1,0 +1,43 @@
+.uploadImage {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  opacity: 0.9;
+  z-index: 4;
+  padding: 0.5rem;
+}
+
+.inputUpload {
+  font-size: 1.5rem;
+  width: 30rem;
+  padding: 0.3rem;
+  text-align: center;
+
+  background-image: url('/icons/dog.png');
+  padding-left: 40px;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+.zoneUpload {
+  border: 1px dashed var(--primary-colour);
+  border-radius: 1.5rem;
+  padding: 1rem;
+  display: block;
+  transition-duration: 0.5s;
+}
+.zoneUpload:hover {
+  border: 1px dashed var(--secondary-colour);
+}
+
+.labelUpload {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.publicarUpload {
+  width: 100%;
+  padding: 1rem;
+}

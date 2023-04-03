@@ -3,7 +3,7 @@ interface commentsProps {
   texto: string
 }
 
-export const CommentsHome = ({nombre, texto}: commentsProps) => {
+export const Comment = ({nombre, texto}: commentsProps) => {
   return (
     <p><b>{nombre}: </b>{texto}</p>
   );
