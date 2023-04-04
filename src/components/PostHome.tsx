@@ -18,7 +18,7 @@ export const PostHome = memo( () => {
         </Link>
 
         <div>
-          <Link to={'/profile?q=' + getNombrePerfil}><b>{getNombrePerfil}</b></Link><br/>
+          <b>{getNombrePerfil}</b><br/>
           {getTexto}
         </div>
       </div>

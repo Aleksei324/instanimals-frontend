@@ -4,10 +4,9 @@ import "../styles/Home.css";
 export const Home = () => {
   return (
     <Layout>
-      <>
-        <br/>
+      <div className="container">
         <FeedHome profile=''/>
-      </>
+      </div>
     </Layout>
   );
 };

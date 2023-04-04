@@ -1,3 +1,5 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+
 @font-face {
   font-family: 'IntelLocal';
   src: local('IntelLocal'), url(/fonts/Inter-VariableFont_slnt,wght.ttf) format('truetype');
@@ -16,30 +18,29 @@
   --dark-text: #F0F2F5;
   --text-in-colour: #FFFFFF;
 
-  font-family: IntelLocal, Inter, Helvetica, sans-serif;
-  font-weight: 400;
-  text-align: center;
+  font-family: IntelLocal, Inter, Helvetica, sans-serif !important;
+  font-weight: 400 !important;
+  text-align: center !important;
 
-  color-scheme: light dark;
-  color: var(--dark-text);
-  background-color: var(--dark-bg);
-
-  text-rendering: optimizeLegibility;
+  color-scheme: light dark !important;
+  text-rendering: optimizeLegibility !important;
 }
 
 body {
-  margin: 0;
-  padding: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: var(--dark-text) !important;
+  background-color: var(--dark-bg) !important;
 }
 
 a {
-  font-weight: 500;
-  color: var(--primary-colour);
-  text-decoration: inherit;
-  transition-duration: 0.5s;
+  font-weight: 500 !important;
+  color: var(--primary-colour) !important;
+  text-decoration: inherit !important;
+  transition-duration: 0.5s !important;
 }
 a:hover {
-  color: var(--secondary-colour);
+  color: var(--secondary-colour) !important;
 }
 
 .yellowButtonG {
@@ -128,11 +129,11 @@ a:hover {
 }
 
 @media (prefers-color-scheme: light) {
-  :root {
-    color: var(--light-text);
-    background-color: var(--light-bg);
+  body {
+    color: var(--light-text) !important;
+    background-color: var(--light-bg) !important;
   }
   .componentG {
-    background-color: var(--light-component);
+    background-color: var(--light-component) !important;
   }
 }
