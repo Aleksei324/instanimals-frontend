@@ -1,17 +1,25 @@
 import '../../styles/shared/Popup.css';
 
 interface popupProps {
-  closeFunction: () => void,
+  activation: boolean,
+  setActivation: React.Dispatch<React.SetStateAction<boolean>>,
   children: JSX.Element
 }
 
-export const Popup = ({closeFunction, children}: popupProps) => {
+export const Popup = ({activation, setActivation, children}: popupProps) => {
   return (
     <>
-      <div className="sombraG" onClick={closeFunction}/>
-      <div className="componentG popupShared">
-        {children}
-      </div>
+    { 
+      activation ? 
+      <>
+        <div className="sombraG" onClick={() => setActivation(false)}/>
+        <div className="componentG popupShared">
+          {children}
+        </div>
+      </>
+      :
+      <div/>
+    }
     </>
   )
 };

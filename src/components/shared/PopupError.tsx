@@ -1,19 +1,21 @@
 import { Popup } from './Popup'
 
 interface popupErrorProps {
-  closeFunctionError: () => void,
-  title: string,
+  activation: boolean,
+  setActivation: React.Dispatch<React.SetStateAction<boolean>>,
   description: string,
   isError: boolean
 }
 
-export const PopupError = ({closeFunctionError, title, description, isError = true}: popupErrorProps) => {
+export const PopupError = ({activation, setActivation, description, isError = true}: popupErrorProps) => {
   return (
-    <Popup closeFunction={closeFunctionError}>
+    <Popup activation={activation} setActivation={setActivation}>
       <>
-        <h1>{title}</h1>
-        <p>{description}</p>
-        <button className={isError ? 'errorPopup' : ''} onClick={closeFunctionError}>Entendido</button>
+        <div>
+          <b>{isError ? 'Proceso fallido' : 'Proceso exitoso'}</b><br/>
+          {description}
+        </div>
+        <button className={isError ? 'errorPopup' : 'yellowButtonG'} onClick={() => setActivation(false)}>Entendido</button>
       </>
     </Popup>
   )

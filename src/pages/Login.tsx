@@ -6,34 +6,19 @@ export const Login = () => {
   const [getRegistroUsuario, setRegistroUsuario] = useState(false);
   const [getRegistroVet, setRegistroVet] = useState(false);
 
-  const turnBothOff = () => {
-    setRegistroUsuario(false)
-    setRegistroVet(false)
-  }
-
   return (
     <div className="login onlyFooterG">
 
       <div className="img_bgLogin"></div>
       <div className="diagonal_bgLogin"></div>
 
-      {
-        getRegistroUsuario ?
-        <Popup closeFunction={() => turnBothOff()}>
-          <Register tipo='usuario'/>
-        </Popup>
-        :
-        <div/>
-      }
+      <Popup activation={getRegistroUsuario} setActivation={setRegistroUsuario}>
+        <Register tipo='usuario'/>
+      </Popup>
 
-      {
-        getRegistroVet ?
-        <Popup closeFunction={() => turnBothOff()}>
-          <Register tipo='vet'/>
-        </Popup>
-        :
-        <div/>
-      }
+      <Popup activation={getRegistroVet} setActivation={setRegistroVet}>
+        <Register tipo='vet'/>
+      </Popup>
 
       <div className="visibleLogin">
         <div>
