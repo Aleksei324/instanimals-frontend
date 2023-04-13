@@ -5,10 +5,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Login, Tyc } from "./pages";
 import { PrivateRoutes } from "./components";
 import "./styles/global.css";
+import { Provider } from "react-redux";
+import { reduxStore } from "./store";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <React.StrictMode>
-    <BrowserRouter>
+  <BrowserRouter>
+    <Provider store={reduxStore}>
       <Routes>
         {/** Rutas a las diferentes paginas */}
         <Route path="/login" element={<Login />} />
@@ -18,6 +20,6 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
           <PrivateRoutes />
         } />
       </Routes>
-    </BrowserRouter>
-  </React.StrictMode>
+    </Provider>
+  </BrowserRouter>
 );
