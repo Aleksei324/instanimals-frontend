@@ -15,7 +15,10 @@ interface userInterface {
 }
 
 const initialState: userInterface = {
-  cart: [],
+  cart: [{ id: "1", cant: 2 },
+  { id: "2", cant: 1 },
+  { id: "3", cant: 3 },
+  { id: "4", cant: 1 },],
   auth: false,
   loading: false,
   errorL: false,
@@ -29,6 +32,7 @@ export const userSlice = createSlice({
   reducers: { // cada *tipo* de acción con su codigo
     changeQuantityCart: (state, action) => {
         state.cart[state.cart.findIndex(x => {x === action.payload.idObjeto })].cant += action.payload.nuevaCant
+        console.log('Funcionando')
         // payload es objeto con la nueva cantidad (+1 o -1) y el id del objeto
     },
     removeFromCart: (state, action) => {
@@ -38,6 +42,8 @@ export const userSlice = createSlice({
         state.cart = []
     },
     addToCart: (state, action) => {
+        if (state.cart.some(x => {x === action.payload.id})){
+        }
         state.cart.push(action.payload) // payload es un nuevo item (objeto con cant=1 e id)
     },
     waitAuth: (state) => {

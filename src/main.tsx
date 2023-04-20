@@ -6,7 +6,7 @@ import { Login, Tyc } from "./pages";
 import { PrivateRoutes } from "./components";
 import "./styles/global.css";
 import { Provider } from "react-redux";
-import { reduxStore } from "./store";
+import { reduxStore } from "./store/store";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <BrowserRouter>
@@ -14,7 +14,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
       <Routes>
         {/** Rutas a las diferentes paginas */}
         <Route path="/login" element={<Login />} />
-        <Route path="/tyc" element={ <Tyc /> } />
+        <Route path="/tyc" element={ <Tyc /> } /> 
 
         <Route path="/*" element={
           <PrivateRoutes />
