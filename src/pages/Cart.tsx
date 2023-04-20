@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { changeQuantityCart, removeFromCart, removeAllFromCart, cartInterface } from "../store/userSlice";
 import { Footer, Pago, Popup } from "../components";
 import '../styles/cart.css';
+import '../styles/Login.css';
 import { Key } from "react";
 
 export const Cart = () => {
@@ -13,10 +14,10 @@ export const Cart = () => {
   const dispatch = useDispatch();
 
   const productos = [
-  { id: "1", precio: 15000, nombre: 'Juguete para gato tipo pez' },
-  { id: "2", precio: 11000, nombre: 'Comida para gato marca adult' },
-  { id: "3", precio: 9000, nombre: 'Collar para perro' },
-  { id: "4", precio: 16000, nombre: 'Alimento vegetariano para gatitos'  }]
+  { id: "1", precio: 15000, nombre: 'Juguete para gato tipo pez', img: '/placeholders/placeholder-posts.png' },
+  { id: "2", precio: 11000, nombre: 'Comida para gato marca adult', img: '/placeholders/placeholder-posts.png' },
+  { id: "3", precio: 9000, nombre: 'Collar para perro', img: '/placeholders/placeholder-posts.png' },
+  { id: "4", precio: 16000, nombre: 'Alimento vegetariano para gatitos', img: '/placeholders/placeholder-posts.png'  }]
 
   const generarProducto = () => {
     const productosEnCarrito = cart.map((item: cartInterface) => {
@@ -41,46 +42,66 @@ export const Cart = () => {
       <Popup activation={getEditarUbicacion} setActivation={setEditarUbicacion}>
         <Pago tipo='ubicacion'/>
       </Popup>
-      <h1>Izquierda</h1>
+      <div className="visibleCart">
+      <div className="componenteG">
+      <div className="cartSectionPost ">
       <div>
-        metodo de pago
-        <button onClick={() => setEditarPago(true)}>editar</button>
+        <b>Metodo de pago</b>
+        <br/>
+        ***************54
+        </div>
+        <button className="yellowButtonG " onClick={() => setEditarPago(true)}>Editar</button>
       </div>
-      <div>
-        ubicación
-        <button onClick={() => setEditarUbicacion(true)}>editar</button>
+      <hr/>
+      <div className="cartSectionPost ">
+        <div>
+        <b>Ubicación</b>
+        <br/>
+        Diagonal 12 #41-79A
+        </div>
+        
+        <button className="yellowButtonG " onClick={() => setEditarUbicacion(true)}>Editar</button>
+        
       </div>
+      <hr/>
       <div>
       <span>Envío: ${(total * 0.05).toFixed(2)}</span>
 
         <br/>
         Total: {total}
         <br/>
-        <button onClick={() => console.log('comprar')}>comprar</button>
+        <button className="yellowButtonG buttonLogin" onClick={() => console.log('comprar')}>Comprar</button>
       </div>
-
+      </div>
       <div className="cart">
-        <h1>Derecha</h1>
         <ul>
-        <button onClick={() => dispatch(removeAllFromCart())}>Remover todos los items</button>
-        <div className="componenteG">
+        <button className="redButtonCart" onClick={() => dispatch(removeAllFromCart())}>Remover todos los items</button>
+        <div className="componenteG ">
+          <div className="componentLogin ">
           {generarProducto().map((item: any, key: Key) => (
-            <li key={key}>
+            <div key={key}>
+              <img className="iconLinksHeader" src={`${item.img}` } alt="Foto de perfil" width="100" height= "100"></img>
               <span>{item.nombre}</span>
               <span> ${item.precio}</span>
-              <button onClick={() => dispatch(changeQuantityCart({ id: item.id, aumenta: false }))}>-</button>
+              <div className=  "">
+              <div className="yellowButtonCart ">
+              <button className="cantidadCart" onClick={() => dispatch(changeQuantityCart({ id: item.id, aumenta: false }))}>-</button>
               <span>{item.cant}</span>
               
-              <button onClick={() => dispatch(changeQuantityCart({ id: item.id, aumenta: true }))}>+</button>
-              <button onClick={() => dispatch(removeFromCart(item.id))}>Remover</button>
-            </li>
+              <button className="cantidadCart" onClick={() => dispatch(changeQuantityCart({ id: item.id, aumenta: true }))}>+</button>
+              </div>
+              <button className="redButtonCart" onClick={() => dispatch(removeFromCart(item.id))}>Remover</button>
+            </div>
+            </div>
             
           ))}
+          </div>
           </div>
         </ul>
         
         </div>
         
+      </div>
       </div>
     </Layout>
   );

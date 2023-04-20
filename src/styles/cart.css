@@ -1,4 +1,58 @@
-.cart {
-    margin: 6rem;
+.visibleCart {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-top: 10%;
+}
+
+.cartSectionPost {
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+  .yellowButtonCart {
+    border-radius: 1.5rem;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: inherit;
+    background-color: var(--primary-colour);
+    color: var(--text-in-colour);
+    transition-duration: 0.5s;
+    width: fit-content;
+  }
+  .yellowButtonCart:hover {
+    background-color: var(--secondary-colour);
   }
   
+  .redButtonCart {
+    border-radius: 1.5rem;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: inherit;
+    background-color: #EB1C41;
+    color: var(--text-in-colour);
+    transition-duration: 0.5s;
+  }
+  .redButtonCart:hover {
+    background-color: var(--secondary-colour);
+  }
+  
+  .cantidadCart {
+    background-color: transparent;
+    text-decoration: none;
+    border: none;
+    
+  }
+
+  hr{
+    background-color: black;
+  }
+
+  img{
+
+  }
