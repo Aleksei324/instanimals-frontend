@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-interface cartInterface {
+export interface cartInterface {
     cant:number,
     id:string
 }
@@ -15,10 +15,12 @@ interface userInterface {
 }
 
 const initialState: userInterface = {
-  cart: [{ id: "1", cant: 2 },
-  { id: "2", cant: 1 },
-  { id: "3", cant: 3 },
-  { id: "4", cant: 1 },],
+  cart: [
+    { id: "1", cant: 2 },
+    { id: "2", cant: 3 },
+    { id: "3", cant: 9 },
+    { id: "4", cant: 6 }
+    ],
   auth: false,
   loading: false,
   errorL: false,
@@ -31,12 +33,21 @@ export const userSlice = createSlice({
   initialState, // *estado inicial*
   reducers: { // cada *tipo* de acción con su codigo
     changeQuantityCart: (state, action) => {
-        state.cart[state.cart.findIndex(x => {x === action.payload.idObjeto })].cant += action.payload.nuevaCant
-        console.log('Funcionando')
-        // payload es objeto con la nueva cantidad (+1 o -1) y el id del objeto
+        const { id, aumenta } = action.payload;
+        const productoID = state.cart.findIndex((product) => product.id === id);
+      
+        if (productoID !== -1) {
+          if (aumenta) {
+            state.cart[productoID].cant += 1;
+          } else if (state.cart[productoID].cant > 1) {
+            state.cart[productoID].cant -= 1;
+          }
+        }
+        // payload es objeto con un boolean sobre si aumenta el valor, y el id del objeto
     },
     removeFromCart: (state, action) => {
-        state.cart.splice(state.cart.findIndex(x => {x === action.payload }),1) // payload es solo el id
+        const updatedCart = state.cart.filter((product) => product.id !== action.payload);
+        state.cart = [...updatedCart];
     },
     removeAllFromCart: (state) => {
         state.cart = []
