@@ -1,10 +1,49 @@
 .chat {
+  background-color: var(--dark-component);
+  border-radius: 2rem 2rem 0 0;
+  padding: 1rem;
+
   position: fixed;
   bottom: 0;
   left: 50%;
+  height: 50rem;
+  width: 38rem;
   transform: translate(-50%, 0);
+}
 
-  padding: 0.5rem;
-  height: 85%;
-  width: 40%;
+.gradientChat {
+  position: fixed;
+  bottom: 29rem;
+  left: 50%;
+  height: 20rem;
+  width: 35rem;
+  transform: translate(-50%, 0);
+  z-index: 2;
+  background: linear-gradient(0deg,
+    rgba(255,255,255,0) 0%, 
+    var(--dark-component) 100%);
+}
+
+.chatInput {
+  position: fixed;
+  bottom: 0.5rem;
+}
+.chatInput > input {
+  background-image: url('/icons/send.png');
+}
+
+.chatComments {
+  position: fixed;
+  bottom: 3rem;
+}
+
+@media (prefers-color-scheme: light) {
+  .chat {
+    background-color: var(--light-component);
+  }
+  .gradientChat {
+    background: linear-gradient(0deg,
+      rgba(255,255,255,0) 0%, 
+      var(--light-component) 100%);
+  }
 }

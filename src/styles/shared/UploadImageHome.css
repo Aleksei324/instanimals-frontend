@@ -4,7 +4,7 @@
   left: 50%;
   transform: translate(-50%, 0);
 
-  opacity: 0.9;
+  opacity: 0.95;
   z-index: 4;
   padding: 0.5rem;
 }
@@ -15,10 +15,23 @@
   padding: 0.3rem;
   text-align: center;
 
-  background-image: url('/icons/dog.png');
   padding-left: 40px;
   background-repeat: no-repeat;
   background-position: left center;
+}
+
+.inputDescUpload {
+  background-image: url('/icons/dog.png');
+}
+
+.inputProductUpload {
+  background-image: url('/icons/box.png');
+}
+
+.inputPriceUpload {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-image: url('/icons/money.png');
 }
 
 .zoneUpload {

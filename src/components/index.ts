@@ -4,7 +4,7 @@ export * from "./PrivateRoutes";
 export * from "./Register";
 
 // Shared
-export * from "./shared/Comment";
+export * from "./shared/CommentZone";
 export * from "./shared/Footer";
 export * from "./shared/Header";
 export * from "./shared/Layout";
