@@ -1,10 +1,16 @@
 import { Footer, Register, Popup } from "../components";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import '../styles/Login.css';
-
+import { authComplete } from "../store/userSlice";
+import { useSelector, useDispatch } from "react-redux";
 export const Login = () => {
   const [getRegistroUsuario, setRegistroUsuario] = useState(false);
   const [getRegistroVet, setRegistroVet] = useState(false);
+  const auth = useSelector((state: any) => state.userSlice.auth)
+  const dispatch = useDispatch();
+
+
 
   return (
     <div className="login onlyFooterG">
@@ -42,8 +48,9 @@ export const Login = () => {
                 <label htmlFor="inputpwd">Contraseña</label><br/>
                 <input className="yellowInputTextG inputFullLogin" type="password" id="inputpwd" />
               </div>
-
-              <button className="yellowButtonG buttonLogin" type="submit">Iniciar sesión</button>
+              <Link  to="/home">
+              <button onClick={() => dispatch(authComplete())} className="yellowButtonG buttonLogin" type="submit">Iniciar sesión</button>
+              </Link>
             </form>
           </div>
 
