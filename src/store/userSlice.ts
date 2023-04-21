@@ -11,7 +11,8 @@ interface userInterface {
     loading: boolean,
     errorL: boolean,
     name: string,
-    picture: string
+    picture: string,
+    tipo: string // USER o VET
 }
 
 const initialState: userInterface = {
@@ -24,14 +25,15 @@ const initialState: userInterface = {
   auth: false,
   loading: false,
   errorL: false,
-  name: '',
-  picture: ''
+  name: 'Apri',
+  picture: '/placeholders/profile-photo.jpg',
+  tipo: 'USER'
 }
 
 export const userSlice = createSlice({
   name: 'userSlice',
-  initialState, // *estado inicial*
-  reducers: { // cada *tipo* de acción con su codigo
+  initialState,
+  reducers: {
     changeQuantityCart: (state, action) => {
         const { id, aumenta } = action.payload;
         const productoID = state.cart.findIndex((product) => product.id === id);
@@ -78,4 +80,4 @@ export const userSlice = createSlice({
 export const {changeQuantityCart,
     removeFromCart, removeAllFromCart,
     addToCart, waitAuth, authComplete,
-    authError, changePic} = userSlice.actions // exportamos todas las acciones\
+    authError, changePic} = userSlice.actions

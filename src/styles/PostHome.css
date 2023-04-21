@@ -1,5 +1,6 @@
 .post {
   margin: 3rem;
+  padding-bottom: 0.5rem;
 }
 
 .titlePost {
@@ -20,20 +21,28 @@
 }
 
 .likeSectionPost {
-  display: flex;
-  padding: 1rem;
-  align-items: center;
-}
-.likeSectionPost > button {
-  padding: 0.5rem;
-}
-.likeSectionPost > input {
-  margin-left: 1.5rem;
-  width: 83%;
-  padding: 0.5rem;
+  margin-top: 0.5rem;
 }
 
-.comentariosPost > * {
-  text-align: left;
-  margin: 1rem;
+.likeButtonPost {
+  border: none;
+  border-radius: 1.5rem;
+  padding: 0rem 1rem 0rem 1rem;
+  margin-right: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--primary-colour);
+  color: var(--text-in-colour);
+  transition-duration: 0.5s;
+}
+.likeButtonPost:hover {
+  background-color: var(--secondary-colour);
+}
+.likeButtonPost > * {
+  margin: 0.5rem;
+}
+
+.inputComentarioPost {
+  background-image: url('/icons/message.png');
 }

@@ -5,7 +5,7 @@ export * from "./Register";
 export * from "./Pago";
 
 // Shared
-export * from "./shared/Comment";
+export * from "./shared/CommentZone";
 export * from "./shared/Footer";
 export * from "./shared/Header";
 export * from "./shared/Layout";

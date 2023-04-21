@@ -1,51 +1,49 @@
-import { memo, useState } from "react";
-import { Comment } from "./";
+import { memo } from "react";
+import { CommentZone } from "./";
 import "../styles/PostHome.css"
 import { Link } from "react-router-dom";
+import { postParams } from "../helpers";
 
-export const PostHome = memo( () => {
-  const getFotoPerfil = '/placeholders/placeholder-posts.png' //TODO
-  const getNombrePerfil = 'Matru husky' //TODO
-  const getTexto = 'Cortecito pal rey' //TODO
-  const [getLikes, setLikes] = useState(45) //TODO
+interface postProps {
+  data: postParams
+}
 
+export const PostHome = memo( ({data}: postProps) => {
   return (
     <div className="componentG post">
 
       <div className="titlePost">
-        <Link to={'/profile?q=' + getNombrePerfil}>
-          <img className="roundedImagesG" src={getFotoPerfil} alt="Foto de perfil" width='56' height='56'/>
+        <Link to='/profile'>
+          <img className="roundedImagesG" src={data.pfp} alt="Foto de perfil" width='56' height='56'/>
         </Link>
 
         <div>
-          <b>{getNombrePerfil}</b><br/>
-          {getTexto}
+          <b>{data.name}</b><br/>
+          {data.desc}
         </div>
       </div>
 
-      <img className="imagePost" src='/placeholders/placeholder-posts.png' alt="Imagen de la publicación" width='850' height='530'/>
+      <img className="imagePost" src={data.pic}
+        alt="Imagen de la publicación" width='700' />
 
       <div className="likeSectionPost">
 
-        <button className="yellowButtonG" type="button" onClick={() => setLikes((x) => x + 1)}>
-          <img src="/icons/love.png" width='20' height='20' alt='' />
-          {getLikes}
+        <button className="likeButtonPost">
+          <img src="/icons/love.png" width='25' height='25' alt='' />
+          {data.likes}
         </button>
 
-        <input 
-          className="yellowInputTextG"
-          type='text'
-          placeholder='Deja un comentario...'/>
+        <span className="inputAndButtonCommentG">
+          <input 
+            className="inputComentarioPost"
+            type='text'
+            placeholder='Deja un comentario...'
+            maxLength={50} />
+          <button>Publicar</button>
+        </span>
       </div>
 
-      <div className="comentariosPost">
-        <Comment nombre="Anacleto perrito" texto="Que lindooooo"/>
-        <Comment nombre="Aurelio el gato" texto="Precioso"/>
-        <Comment nombre="Matru" texto="Muchas gracias por sus comentarios"/>
-        <Comment nombre="Aurelio" texto="Que lindooooo"/>
-        <Comment nombre="Aurelio" texto="Que lindooooo"/>
-        <br/>
-      </div>
+      <CommentZone id_post={data.id} nuevoComentarioAbajo={false} maxComentarios={5} />
     </div>
   );
 });
