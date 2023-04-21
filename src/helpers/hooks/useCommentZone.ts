@@ -1,49 +1,46 @@
 import { useEffect, useState } from "react"
+import { placeholderComments } from "../../placeholders"
 
 export interface stateParams {
   name: string,
   text: string
 }
 
-export const useCommentZone = (valorInicial: stateParams[], max: number, nuevoComentarioAbajo: boolean) => {
+export const useCommentZone = (id: string, max: number, nuevoComentarioAbajo: boolean) => {
 
-  const [getCommentsArray, setCommentsArray] = useState(valorInicial)
+  const [getCommentsArray, setCommentsArray] = useState<stateParams[]>(placeholderComments)
 
   const newCommentCreated = (n: string, t: string) => {
-    let temp = []
+    const temp = [...getCommentsArray]
 
-    if (getCommentsArray.length < max) {
+    if (temp.length < max) {
       if (nuevoComentarioAbajo) {
-        setCommentsArray(x => [...x, {name: n, text: t}])
+        temp.push({name: n, text: t})
       }
       else {
-        setCommentsArray(x => [{name: n, text: t}, ...x])
+        temp.unshift({name: n, text: t})
       }
     }
     else {
       if (nuevoComentarioAbajo) { 
-        temp = [...getCommentsArray]
         temp.push({name: n, text: t})
-        temp.splice(0, 1)
-        setCommentsArray(temp)
+        while (temp.length > max) {
+          temp.splice(0, 1)
+        }
       }
       else {
-        temp = [...getCommentsArray]
         temp.unshift({name: n, text: t})
-        temp.splice(temp.length - 1, 1)
-        setCommentsArray(temp)
+        while (temp.length > max) {
+          temp.splice(temp.length - 1, 1)
+        }
       }
     }
+    setCommentsArray([...temp])
   }
 
   useEffect(() => {
     // TODO SOCKET
-    
-    setTimeout(() => newCommentCreated('Juanjo', 'Hey, que tal?'), 1000)
-    setTimeout(() => newCommentCreated('Aurelio', 'precioso'), 2000)
-    setTimeout(() => newCommentCreated('Matru', 'Gracias por sus comentarios'), 3000)
-    setTimeout(() => newCommentCreated('Apolo', 'me encanta <3'), 4000)
-    setTimeout(() => newCommentCreated('Juanjo', 'Hey, que tal?'), 5000)
+    newCommentCreated('Camilo', 'Como no existe servidor, tus mensajes no van a ningún lado todavía')
   },[])
 
   return getCommentsArray

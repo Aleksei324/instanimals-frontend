@@ -11,6 +11,19 @@
   transform: translate(-50%, 0);
 }
 
+.gradientChat {
+  position: fixed;
+  bottom: 29rem;
+  left: 50%;
+  height: 20rem;
+  width: 35rem;
+  transform: translate(-50%, 0);
+  z-index: 2;
+  background: linear-gradient(0deg,
+    rgba(255,255,255,0) 0%, 
+    var(--dark-component) 100%);
+}
+
 .chatInput {
   position: fixed;
   bottom: 0.5rem;
@@ -27,5 +40,10 @@
 @media (prefers-color-scheme: light) {
   .chat {
     background-color: var(--light-component);
+  }
+  .gradientChat {
+    background: linear-gradient(0deg,
+      rgba(255,255,255,0) 0%, 
+      var(--light-component) 100%);
   }
 }

@@ -9,8 +9,7 @@ interface commentZoneProps {
 
 export const CommentZone = ({id_post, nuevoComentarioAbajo, maxComentarios}: commentZoneProps) => { // TODO API
 
-  const commentsArray = useCommentZone([], maxComentarios, nuevoComentarioAbajo)
-
+  const commentsArray = useCommentZone(id_post, maxComentarios, nuevoComentarioAbajo)
   return (
     <div className="commentZone">
       {

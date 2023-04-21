@@ -11,16 +11,18 @@ interface userInterface {
     loading: boolean,
     errorL: boolean,
     name: string,
-    picture: string
+    picture: string,
+    tipo: string // USER o VET
 }
 
 const initialState: userInterface = {
     cart: [],
-    auth: false,
+    auth: true,
     loading: false,
     errorL: false,
-    name: '',
-    picture: ''
+    name: 'Apri',
+    picture: '/placeholders/profile-photo.jpg',
+    tipo: 'USER'
 }
 
 export const userSlice = createSlice({

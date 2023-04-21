@@ -30,7 +30,7 @@ export const Register = ({ tipo }: poputProps) => {
 
             <div className='cerca'>
               <div>
-                <label htmlFor="inputnombre">Nombre</label><br/>
+                <label htmlFor="inputnombre">Username</label><br/>
                 <input className="yellowInputTextG inputHalfLogin" type="text" id="inputnombre" name="nombre" />
               </div>
 

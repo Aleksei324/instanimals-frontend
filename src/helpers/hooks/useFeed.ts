@@ -1,17 +1,34 @@
 import { useEffect, useState } from "react"
+import { placeholderPosts } from "../../placeholders"
 
-export const useFeed = (profileName: string) => {
+export interface postParams {
+  id: string,
+  name: string,
+  pfp: string,
+  pic: string,
+  desc: string,
+  likes: number
+}
 
-  const [getPostsArray, setPostsArray] = useState<string[]>([]) // array con IDs de los posts
+export const useFeed = (profileName: string | undefined) => {
+
+  const [getPostsArray, setPostsArray] = useState<postParams[]>([]) // array con IDs de los posts
 
   useEffect(() => {
     if (profileName === '') {
       // TODO LLAMAR A LA BASE DE DATOS PARA CONSEGUIR LOS POSTS MÁS RECIENTES
-      setPostsArray(['1','2','3'])
+      setPostsArray([...placeholderPosts])
     }
     else {
       // TODO LLAMAR A LA BASE DE DATOS PARA CONSEGUIR POST DE ESE PERFIL
-      setPostsArray(['4','5','6'])
+      const temp = []
+      
+      for (const post of placeholderPosts) {
+        if (profileName === post.name) {
+          temp.push(post)
+        }
+      }
+      setPostsArray([...temp])
     }
   },[])
 

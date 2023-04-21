@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
-import { Footer } from "../components";
+import { Footer, Header } from "../components";
 
-export const NotFound = () => {
-  /** Pagina del error 404 */
+export const NoProfileFound = () => {
   return (
     <div className="onlyFooterG">
+      <Header/>
       <br/>
-      <h1>404: Oops, página no encontrada</h1>
+      <br/>
+      <br/>
+      <br/>
+      <h1>404: Perfil no existente</h1>
       <Link to='/home'>Volver al inicio</Link>
       <Footer/>
     </div>

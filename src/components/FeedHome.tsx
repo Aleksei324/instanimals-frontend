@@ -2,7 +2,7 @@ import { useFeed } from "../helpers/";
 import { PostHome } from "./";
 
 interface feedProps {
-  profileName: string
+  profileName: string | undefined
 }
 
 export const FeedHome = ({profileName}: feedProps) => {
@@ -14,7 +14,7 @@ export const FeedHome = ({profileName}: feedProps) => {
       {
         postsArray.map( (post, key) => {
           return (
-            <PostHome key={key} idPost={post} />
+            <PostHome key={key} data={post} />
           )
         })
       }
