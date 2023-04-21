@@ -13,7 +13,7 @@ export const PostHome = memo( ({data}: postProps) => {
     <div className="componentG post">
 
       <div className="titlePost">
-        <Link to='/profile'>
+        <Link to={`/profile/${data.name}`}>
           <img className="roundedImagesG" src={data.pfp} alt="Foto de perfil" width='56' height='56'/>
         </Link>
 

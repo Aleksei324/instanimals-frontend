@@ -1,16 +1,35 @@
 import { Footer, Register, Popup } from "../components";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { authComplete, waitAuth } from "../store/userSlice";
+import { useDispatch } from "react-redux";
 import '../styles/Login.css';
-import { authComplete } from "../store/userSlice";
-import { useSelector, useDispatch } from "react-redux";
+
 export const Login = () => {
-  const [getRegistroUsuario, setRegistroUsuario] = useState(false);
-  const [getRegistroVet, setRegistroVet] = useState(false);
-  const auth = useSelector((state: any) => state.userSlice.auth)
-  const dispatch = useDispatch();
 
+  const [getRegistroUsuario, setRegistroUsuario] = useState(false)
+  const [getRegistroVet, setRegistroVet] = useState(false)
 
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+
+  const onLogin = () => {
+    dispatch(waitAuth())
+
+    const userData = {
+      name: 'Apri',
+      picture: '/placeholders/profile-photo.jpg',
+      tipo: 'USER'
+    }
+
+    localStorage.setItem('name', userData.name)
+    localStorage.setItem('picture', userData.picture)
+    localStorage.setItem('tipo', userData.tipo)
+    localStorage.setItem('auth', '1')
+
+    dispatch(authComplete(userData))
+    navigate('/home')
+  }
 
   return (
     <div className="login onlyFooterG">
@@ -48,9 +67,7 @@ export const Login = () => {
                 <label htmlFor="inputpwd">Contraseña</label><br/>
                 <input className="yellowInputTextG inputFullLogin" type="password" id="inputpwd" />
               </div>
-              <Link  to="/home">
-              <button onClick={() => dispatch(authComplete())} className="yellowButtonG buttonLogin" type="submit">Iniciar sesión</button>
-              </Link>
+              <button onClick={() => onLogin()} className="yellowButtonG buttonLogin" type="submit">Iniciar sesión</button>
             </form>
           </div>
 

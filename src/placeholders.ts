@@ -27,26 +27,26 @@ export const placeholderProfiles = [
 export const placeholderPosts = [
   {
     id: '1',
-    name: 'Anacleto',
-    pfp: '/placeholders/profile-photo-others.jpg',
-    pic: '/placeholders/post-photo-1.jpg',
-    desc: 'Cortecito pal rey que le hice hoy en la mañanita',
-    likes: 500
+    name: 'Apri',
+    pfp: '/placeholders/profile-photo.jpg',
+    pic: '/placeholders/post-photo-5.jpg',
+    desc: 'Orion es un amor de perrito',
+    likes: 72
   },
   {
     id: '2',
     name: 'Anacleto',
     pfp: '/placeholders/profile-photo-others.jpg',
-    pic: '/placeholders/post-photo-2.jpg',
-    desc: 'Cortecito pal rey que le hice hoy en la mañanita',
-    likes: 60
+    pic: '/placeholders/post-photo-1.jpg',
+    desc: 'Probando mi nueva cajita',
+    likes: 500
   },
   {
     id: '3',
     name: 'Anacleto',
     pfp: '/placeholders/profile-photo-others.jpg',
     pic: '/placeholders/post-photo-3.jpg',
-    desc: 'Cortecito pal rey que le hice hoy en la mañanita',
+    desc: 'Cortecito pal rey que tuve hoy en la mañanita',
     likes: 400
   },
   {
@@ -54,16 +54,16 @@ export const placeholderPosts = [
     name: 'Apri',
     pfp: '/placeholders/profile-photo.jpg',
     pic: '/placeholders/post-photo-4.jpg',
-    desc: 'Cortecito pal rey que le hice hoy en la mañanita',
+    desc: 'Descansando en mi cesped favorito',
     likes: 550
   },
   {
     id: '5',
-    name: 'Apri',
-    pfp: '/placeholders/profile-photo.jpg',
-    pic: '/placeholders/post-photo-5.jpg',
-    desc: 'Cortecito pal rey que le hice hoy en la mañanita',
-    likes: 72
+    name: 'Anacleto',
+    pfp: '/placeholders/profile-photo-others.jpg',
+    pic: '/placeholders/post-photo-2.jpg',
+    desc: 'Levantado y listo para arañar muebles',
+    likes: 60
   }
 ]
 

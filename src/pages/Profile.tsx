@@ -65,7 +65,7 @@ export const Profile = () => {
           <>
             <br/>
             <div className="flexProfile componentG">
-              <img className="roundedImagesG" src={getProfilePic} alt="big profile picture" />
+              <img className="roundedImagesG" src={getProfilePic} alt="big profile picture" width='250' height='250' />
               <div>
                 {
                   getProfileTipo === 'USER'?
