@@ -1,35 +1,12 @@
 import { Footer, Register, Popup } from "../components";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
-import { authComplete, waitAuth } from "../store/userSlice";
-import { useDispatch } from "react-redux";
+import { useLogin } from "../helpers";
 import '../styles/Login.css';
 
 export const Login = () => {
 
-  const [getRegistroUsuario, setRegistroUsuario] = useState(false)
-  const [getRegistroVet, setRegistroVet] = useState(false)
-
-  const navigate = useNavigate()
-  const dispatch = useDispatch()
-
-  const onLogin = () => {
-    dispatch(waitAuth())
-
-    const userData = {
-      name: 'Apri',
-      picture: '/placeholders/profile-photo.jpg',
-      tipo: 'USER'
-    }
-
-    localStorage.setItem('name', userData.name)
-    localStorage.setItem('picture', userData.picture)
-    localStorage.setItem('tipo', userData.tipo)
-    localStorage.setItem('auth', '1')
-
-    dispatch(authComplete(userData))
-    navigate('/home')
-  }
+  const {getRegistroUsuario, setRegistroUsuario, 
+    getRegistroVet, setRegistroVet, getInputMail, 
+    setInputMail, getInputPWD, setInputPWD, onLogin} = useLogin()
 
   return (
     <div className="login onlyFooterG">
@@ -57,18 +34,29 @@ export const Login = () => {
 
         <div>
           <div className="componentG">
-            <form className="componentLogin">
+            <div className="componentLogin">
               <div>
                 <label htmlFor="inputmail">Correo electrónico</label><br/>
-                <input className="yellowInputTextG inputFullLogin" type="email" id="inputmail" name="mail" /><br/>
+                <input className="yellowInputTextG inputFullLogin"
+                  type="email" value={getInputMail}
+                  onChange={(evt) => setInputMail(evt.target.value)}
+                  id="inputmail" />
               </div>
 
               <div>
                 <label htmlFor="inputpwd">Contraseña</label><br/>
-                <input className="yellowInputTextG inputFullLogin" type="password" id="inputpwd" />
+                <input className="yellowInputTextG inputFullLogin" 
+                  type="password" value={getInputPWD} 
+                  onChange={(evt) => setInputPWD(evt.target.value)} 
+                  id="inputpwd" />
               </div>
-              <button onClick={() => onLogin()} className="yellowButtonG buttonLogin" type="submit">Iniciar sesión</button>
-            </form>
+
+              <button onClick={() => onLogin()} 
+                className="yellowButtonG buttonLogin" 
+                type="submit">
+                Iniciar sesión
+              </button>
+            </div>
           </div>
 
           <div className="texto-abajoLogin">

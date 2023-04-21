@@ -1,3 +1,30 @@
-.home {
-  
+.welcomeHome {
+  margin: 3rem;
+  margin-left: 3%;
+  margin-right: 3%;
+  padding: 0.5rem;
+  text-align: left;
+}
+.welcomeHome > * > * {
+  margin: 0.5rem;
+}
+
+.flexHome {
+  display: flex;
+}
+
+.fotosRecientesHome > img {
+  border-radius: 1rem;
+  margin: 0.1rem;
+}
+
+.searchWelcomeHome {
+  font-size: 1.3rem;
+  width: 19rem;
+  text-align: center;
+  padding: 0.3rem;
+  padding-left: 40px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-image: url('/icons/search.png');
 }

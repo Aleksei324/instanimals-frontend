@@ -1,11 +1,9 @@
-import { Layout } from "../components";
-import { useState } from "react";
+import { useState, Key } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { changeQuantityCart, removeFromCart, removeAllFromCart, cartInterface } from "../store/userSlice";
-import { Footer, Pago, Popup } from "../components";
+import { Layout, Pago, Popup } from "../components";
 import '../styles/cart.css';
 import '../styles/Login.css';
-import { Key } from "react";
 
 export const Cart = () => {
   const [getEditarPago, setEditarPago] = useState(false);

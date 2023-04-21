@@ -1,62 +1,14 @@
-import { useParams } from "react-router-dom";
 import { FeedHome, Layout } from "../components";
-import { useSelector } from "react-redux";
-import { useEffect, useState } from "react";
-import { NoProfileFound } from "./NoProfileFound";
-import { placeholderProfiles } from "../placeholders";
+import { NoProfileFound } from "./";
+import { useProfile } from "../helpers";
+import '../styles/Profile.css'
 
 export const Profile = () => {
-  const {profileID} = useParams()
-  const name = useSelector( (state: any) => state.userSlice.name)
-
-  const [getExistPage, setExistPage] = useState(true)
-  const [getProfileName, setProfileName] = useState('')
-  const [getProfileTipo, setProfileTipo] = useState('')
-  const [getProfilePic, setProfilePic] = useState('')
-  const [getProfileDesc, setProfileDesc] = useState('')
-  const [getProfileA1, setProfileA1] = useState('') // Raza o NIT
-  const [getProfileA2, setProfileA2] = useState(0) // Edad
-
-  useEffect(() => {
-    // TODO get profile with api
-    let temp
-    if (profileID === 'Apri') {
-      temp = placeholderProfiles[0]
-
-      setExistPage(true)
-      setProfileName(temp.name)
-      setProfileTipo(temp.tipo)
-      setProfilePic(temp.pic)
-      setProfileDesc(temp.desc)
-      setProfileA1(temp.raza || '')
-      setProfileA2(temp.edad || 0)
-    }
-    else if (profileID === 'Anacleto') {
-      temp = placeholderProfiles[1]
-
-      setExistPage(true)
-      setProfileName(temp.name)
-      setProfileTipo(temp.tipo)
-      setProfilePic(temp.pic)
-      setProfileDesc(temp.desc)
-      setProfileA1(temp.raza || '')
-      setProfileA2(temp.edad || 0)
-    }
-    else if (profileID === 'NaranjasLab') {
-      temp = placeholderProfiles[2]
-
-      setExistPage(true)
-      setProfileName(temp.name)
-      setProfileTipo(temp.tipo)
-      setProfilePic(temp.pic)
-      setProfileDesc(temp.desc)
-      setProfileA1(temp.nit || '')
-    }
-    else {
-      setExistPage(false)
-    }
-  },[])
-
+  
+  const { getExistPage, getProfileName,
+    getProfileTipo, getProfilePic,
+    getProfileDesc, getProfileA1,
+    getProfileA2, profileID, name } = useProfile()
   return (
     <>
       {
@@ -64,19 +16,27 @@ export const Profile = () => {
         <Layout>
           <>
             <br/>
-            <div className="flexProfile componentG">
-              <img className="roundedImagesG" src={getProfilePic} alt="big profile picture" width='250' height='250' />
-              <div>
-                {
-                  getProfileTipo === 'USER'?
-                  <p>{getProfileA1} &bull; {getProfileA2} {getProfileA2 === 1 ? 'año' : 'años'} de edad</p>
-                  :
-                  <p>NIT {getProfileA1}</p>
-                }
-                <h1>{getProfileName}</h1>
-                <p>{getProfileDesc}</p>
+            <br/>
+            <br/>
+            <br/>
+            <div className="componentG componentProfile">
+              <div className="bannerProfile" />
+              <div className="flexProfile">
+                <img className="roundedImagesG pfpProfile" src={getProfilePic} alt="big profile picture" width='250' height='250' />
+                <div className="textoProfile">
+                  {
+                    getProfileTipo === 'USER'?
+                    <span>{getProfileA1} &bull; {getProfileA2} {getProfileA2 === 1 ? 'año' : 'años'} de edad</span>
+                    :
+                    <span>NIT {getProfileA1}</span>
+                  }
+                  <h1>{getProfileName}</h1>
+                  <hr/>
+                  <p>{getProfileDesc}</p>
+                </div>
               </div>
             </div>
+
             <div className="feedProfile">
               <FeedHome profileName={profileID} />
             </div>

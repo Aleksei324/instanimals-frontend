@@ -1,34 +1,26 @@
-import { useState } from 'react'
+import { useUploadImageHome } from '../../helpers'
 import '../../styles/shared/UploadImageHome.css'
-import { useSelector } from 'react-redux'
 
 export const UploadImageHome = () => {
 
-  const [getInteracted, setInteracted] = useState(false)
-  const [getImgUploaded, setImgUploaded] = useState(false)
-  const [getValueInput, setValueInput] = useState('')
-  const [getValueInputPrice, setValueInputPrice] = useState('')
-
-  const onPublicar = () => {
-    // TODO upload to server
-    setImgUploaded(false)
-    setValueInput('')
-    setValueInputPrice('')
-    setInteracted(false)
-  }
-
-  const tipo = useSelector( (state: any) => state.userSlice.tipo)
+  const {getInteracted, setInteracted,
+    getImgUploaded, setImgUploaded,
+    getValueInput, setValueInput,
+    getValueInputPrice, setValueInputPrice, 
+    onPublicar, tipo} = useUploadImageHome()
   return (
     <>
       <div className={getInteracted ? "sombraG":"hiddenG"} onClick={() => setInteracted(false)}/>
 
       <div className="componentG uploadImage">
 
+        <label className='sr-only ultraHiddenG' htmlFor='inputSubmitImage'>Texto del post</label>
         {
           tipo === 'USER' ? 
           <input 
             className="yellowInputTextG inputUpload inputDescUpload"
             type='text'
+            id='inputSubmitImage'
             placeholder='¿Qué ha hecho tu mascota hoy?'
             value={getValueInput}
             onChange={(evt) => setValueInput(evt.target.value)}
@@ -38,6 +30,7 @@ export const UploadImageHome = () => {
           <input 
             className="yellowInputTextG inputUpload inputProductUpload"
             type='text'
+            id='inputSubmitImage'
             placeholder='¿Qué vas a vender esta semana?'
             value={getValueInput}
             onChange={(evt) => setValueInput(evt.target.value)}
@@ -49,13 +42,17 @@ export const UploadImageHome = () => {
 
           {
             tipo === 'VET' ? 
-            <input 
-              className="yellowInputTextG inputUpload inputPriceUpload"
-              type='number'
-              placeholder='Precio (COP)'
-              value={getValueInputPrice}
-              onChange={(evt) => Number(evt.target.value) > 0 ? setValueInputPrice(evt.target.value) : setValueInputPrice('')}
-              maxLength={10} />
+            <>
+              <label className='sr-only ultraHiddenG' htmlFor='inputPriceSubmitImage'>Precio del producto</label>
+              <input 
+                className="yellowInputTextG inputUpload inputPriceUpload"
+                type='number'
+                id='inputPriceSubmitImage'
+                placeholder='Precio (COP)'
+                value={getValueInputPrice}
+                onChange={(evt) => Number(evt.target.value) > 0 ? setValueInputPrice(evt.target.value) : setValueInputPrice('')}
+                maxLength={10} />
+            </>
             :
             <></>
           }

@@ -101,8 +101,8 @@ a:hover {
   border: 1px solid var(--secondary-colour);
 }
 ::placeholder {
-  font-family: IntelLocal, Inter, Helvetica, sans-serif;
-  color: lightgrey;
+  font-family: IntelLocal, Inter, Helvetica, sans-serif !important;
+  color: darkgrey !important;
 }
 
 
@@ -133,7 +133,7 @@ a:hover {
 
 .sombraG {
   background-color: black;
-  opacity: 0.25;
+  opacity: 0.5;
   position: fixed;
   top: 0;
   left: 0;

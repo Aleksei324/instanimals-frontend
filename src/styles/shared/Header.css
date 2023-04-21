@@ -7,7 +7,7 @@
   z-index: 2;
 
   background-color: var(--dark-component);
-  opacity: 0.9;
+  opacity: 0.95;
   border-bottom: 1px solid var(--primary-colour);
 
   display: flex;

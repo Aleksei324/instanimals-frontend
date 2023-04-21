@@ -15,7 +15,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
       <Routes>
         {/** Rutas a las diferentes paginas */}
         <Route path="/login" element={<Login />} />
-        <Route path="/tyc" element={ <Tyc /> } /> 
+        <Route path="/tyc" element={ <Tyc /> } />
 
         <Route path="/*" element={
           <PrivateRoutes />
