@@ -53,9 +53,9 @@ export const userSlice = createSlice({
         state.cart = []
     },
     addToCart: (state, action) => {
-        if (state.cart.some(x => {x === action.payload.id})){
+        if (!( state.cart.some(x => {x.id === action.payload.id}) )){
+          state.cart.push(action.payload) // payload es un nuevo item (objeto con cant=1 e id)
         }
-        state.cart.push(action.payload) // payload es un nuevo item (objeto con cant=1 e id)
     },
     waitAuth: (state) => {
         state.loading = true

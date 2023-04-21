@@ -20,8 +20,8 @@
   margin: 1rem;
 }
 .cartReduce{
-  display: flex;
   align-items: center;
+  
 }
   .yellowButtonCart {
     border-radius: 1.5rem;
