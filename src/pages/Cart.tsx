@@ -68,7 +68,7 @@ export const Cart = () => {
       <span>Envío: ${(total * 0.05).toFixed(2)}</span>
 
         <br/>
-        Total: {total}
+        Total: ${total}
         <br/>
         <button className="yellowButtonG buttonLogin" onClick={() => console.log('comprar')}>Comprar</button>
       </div>
@@ -76,14 +76,14 @@ export const Cart = () => {
       <div className="cart">
         <ul>
         <button className="redButtonCart" onClick={() => dispatch(removeAllFromCart())}>Remover todos los items</button>
-        <div className="componenteG ">
-          <div className="componentLogin ">
+        <div className=" ">
+          <div className="componentLogin">
           {generarProducto().map((item: any, key: Key) => (
-            <div key={key}>
+            <div key={key} className="componentG cartItem">
               <img className="iconLinksHeader" src={`${item.img}` } alt="Foto de perfil" width="100" height= "100"></img>
               <span>{item.nombre}</span>
               <span> ${item.precio}</span>
-              <div className=  "">
+              <div className=  "cartReduce">
               <div className="yellowButtonCart ">
               <button className="cantidadCart" onClick={() => dispatch(changeQuantityCart({ id: item.id, aumenta: false }))}>-</button>
               <span>{item.cant}</span>

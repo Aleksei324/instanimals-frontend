@@ -63,6 +63,7 @@ export const userSlice = createSlice({
     authComplete: (state) => {
         state.auth = true
         state.loading = false
+        
     },
     authError: (state) => {
         state.loading = false

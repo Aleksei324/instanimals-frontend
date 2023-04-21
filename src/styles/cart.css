@@ -13,6 +13,16 @@
   
 }
 
+.cartItem {
+  display: flex;
+}
+.cartItem > * {
+  margin: 1rem;
+}
+.cartReduce{
+  display: flex;
+  align-items: center;
+}
   .yellowButtonCart {
     border-radius: 1.5rem;
     border: none;

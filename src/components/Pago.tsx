@@ -16,12 +16,12 @@ export const Pago = ({ tipo }: poputProps) => {
             </div>
 
             <div>
-              <label htmlFor="inputmail">Número de la tarjeta</label><br/>
+              <label htmlFor="inputmail">Nombre de la tarjeta</label><br/>
               <input className="yellowInputTextG inputFullLogin" type="email" id="inputmail" name="mail" />
             </div>
 
             <div>
-              <label htmlFor="inputpwd">Ingrese su tarjeta</label><br/>
+              <label htmlFor="inputpwd">Número de la tarjeta</label><br/>
               <input className="yellowInputTextG inputFullLogin" type="password" id="inputpwd" />
             </div>
             <div className='cerca'>
