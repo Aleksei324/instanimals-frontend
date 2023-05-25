@@ -85,7 +85,7 @@ export const Register = ({ tipo }: poputProps) => {
       <br/>
       <div>
         Al hacer click en "Registrarse", aceptas nuestras<br/>
-        <a href="/tyc" target="_blank">condiciones</a>,
+        <a href="/tyc">condiciones</a>,
         la politica de privacidad y de cookies
         <button className='yellowButtonG buttonLogin' type="submit">Registrarse</button>
       </div>

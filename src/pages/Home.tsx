@@ -49,7 +49,7 @@ export const Home = () => {
           </>
         </Layout>
         :
-        <Navigate to='/profile' />
+        <Navigate to={`/profile/${userID}`} />
       }
     </>
   );

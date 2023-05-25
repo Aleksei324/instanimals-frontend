@@ -65,6 +65,7 @@ export const userSlice = createSlice({
       state.loading = true
     },
     authComplete: (state, action) => {
+      state.userID = action.payload.userID
       state.name = action.payload.name
       state.picture = action.payload.picture
       state.tipo = action.payload.tipo

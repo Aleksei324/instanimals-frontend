@@ -20,7 +20,7 @@ export const useLogin = () => {
       userID: '2121335',
       tipo: 'USER',
       name: 'Apri',
-      picture: '/placeholders/profile-photo.jpg',
+      picture: '/placeholders/profile-photo.jpg'
     }
 
     localStorage.setItem('userID', userData.userID)
@@ -32,7 +32,7 @@ export const useLogin = () => {
     dispatch(authComplete(userData))
     navigate('/home')
   }
-  
+
   return {
     getRegistroUsuario: getRegistroUsuario,
     setRegistroUsuario: setRegistroUsuario,
