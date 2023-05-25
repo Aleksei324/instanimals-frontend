@@ -1,7 +1,7 @@
 import { Link, Navigate } from "react-router-dom";
 import { FeedHome, Layout } from "../components";
 import { useHome } from "../helpers";
-import "../styles/Home.css";
+import "../styles/home.css";
 
 export const Home = () => {
 
