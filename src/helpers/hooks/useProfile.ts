@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react"
-import { useSelector } from "react-redux"
 import { useParams } from "react-router-dom"
 import { placeholderProfiles } from "../../placeholders"
 
 export const useProfile = () => {
 
   const {profileID} = useParams()
-  const name = useSelector( (state: any) => state.userSlice.name)
 
   const [getExistPage, setExistPage] = useState(true)
   const [getProfileName, setProfileName] = useState('')
@@ -19,7 +17,7 @@ export const useProfile = () => {
   useEffect(() => {
     // TODO get profile with api
     let temp
-    if (profileID === 'Apri') {
+    if (profileID === '2121335') {
       temp = placeholderProfiles[0]
 
       setExistPage(true)
@@ -30,7 +28,7 @@ export const useProfile = () => {
       setProfileA1(temp.raza || '')
       setProfileA2(temp.edad || 0)
     }
-    else if (profileID === 'Anacleto') {
+    else if (profileID === '2121336') {
       temp = placeholderProfiles[1]
 
       setExistPage(true)
@@ -41,7 +39,7 @@ export const useProfile = () => {
       setProfileA1(temp.raza || '')
       setProfileA2(temp.edad || 0)
     }
-    else if (profileID === 'NaranjasLab') {
+    else if (profileID === '2121337') {
       temp = placeholderProfiles[2]
 
       setExistPage(true)
@@ -64,7 +62,6 @@ export const useProfile = () => {
     getProfileDesc: getProfileDesc,
     getProfileA1: getProfileA1,
     getProfileA2: getProfileA2,
-    profileID: profileID,
-    name: name
+    profileID: profileID
   }
 }

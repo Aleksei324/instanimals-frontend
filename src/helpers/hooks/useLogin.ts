@@ -17,14 +17,16 @@ export const useLogin = () => {
 
     // TODO API
     const userData = {
+      userID: '2121335',
+      tipo: 'USER',
       name: 'Apri',
       picture: '/placeholders/profile-photo.jpg',
-      tipo: 'USER'
     }
 
+    localStorage.setItem('userID', userData.userID)
+    localStorage.setItem('tipo', userData.tipo)
     localStorage.setItem('name', userData.name)
     localStorage.setItem('picture', userData.picture)
-    localStorage.setItem('tipo', userData.tipo)
     localStorage.setItem('auth', '1')
 
     dispatch(authComplete(userData))

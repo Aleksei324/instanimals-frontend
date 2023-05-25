@@ -8,7 +8,7 @@ export const Footer = () => {
       Christian David Posada & Camilo Franco Moya <br/>
       Programación en ambiente web &bull; Universidad Autonoma de Occidente<br/>
       Iconos por Freepik en Flaticon &bull; Imagenes de Pixabay<br/>
-      <Link to='/home'>home</Link> &bull; <Link to='/login'>login</Link> &bull; <Link to='/tyc'>tyc</Link> 
+      <Link to='/home'>home</Link> &bull; <Link to='/login'>login</Link>
     </footer>
   )
 };

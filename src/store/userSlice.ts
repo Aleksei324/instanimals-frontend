@@ -1,18 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export interface cartInterface {
-    cant:number,
-    id:string
+  cant:number,
+  id:string
 }
 
 interface userInterface {
-    cart: cartInterface[],
-    auth: boolean ,
-    loading: boolean,
-    errorL: boolean,
-    name: string,
-    picture: string,
-    tipo: string // USER o VET
+  cart: cartInterface[],
+  auth: boolean ,
+  loading: boolean,
+  errorL: boolean,
+  userID: string,
+  name: string,
+  picture: string,
+  tipo: string // USER o VET
 }
 
 const initialState: userInterface = {
@@ -21,10 +22,11 @@ const initialState: userInterface = {
     { id: "2", cant: 3 },
     { id: "3", cant: 9 },
     { id: "4", cant: 6 }
-    ],
+  ],
   auth: localStorage.getItem('auth') === '1' || false, // '1'=true, '0'=false
   loading: false,
   errorL: false,
+  userID: localStorage.getItem('userID') || '',
   name: localStorage.getItem('name') || '',
   picture: localStorage.getItem('picture') || '',
   tipo: localStorage.getItem('tipo') || '' // USER o VET

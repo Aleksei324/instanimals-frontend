@@ -8,7 +8,7 @@ export const Profile = () => {
   const { getExistPage, getProfileName,
     getProfileTipo, getProfilePic,
     getProfileDesc, getProfileA1,
-    getProfileA2, profileID, name } = useProfile()
+    getProfileA2, profileID } = useProfile()
   return (
     <>
       {

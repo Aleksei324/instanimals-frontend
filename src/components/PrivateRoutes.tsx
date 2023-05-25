@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 
 export const PrivateRoutes = () => {
 
-  const {tipo, auth, name} = useSelector( (state: any) => state.userSlice)
+  const {tipo, auth, userID} = useSelector( (state: any) => state.userSlice)
   return (
     <Routes>
       <Route path="/chat" element={ auth && tipo === 'USER' ? <Chat /> : <Unauthorized /> } />
@@ -12,7 +12,7 @@ export const PrivateRoutes = () => {
 
       <Route path="/" element={ auth ? <Navigate to='/home' /> : <Navigate to='/login' /> } />
       <Route path="/home" element={ auth ? <Home /> : <Unauthorized /> } />
-      <Route path="/profile" element={ auth ? <Navigate to={`/profile/${name}`} /> : <Unauthorized /> } />
+      <Route path="/profile" element={ auth ? <Navigate to={`/profile/${userID}`} /> : <Unauthorized /> } />
       <Route path="/profile/:profileID" element={ auth ? <Profile /> : <Unauthorized /> } />
 
       <Route path="*" element={<NotFound />} />

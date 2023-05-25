@@ -5,7 +5,7 @@ import "../styles/home.css";
 
 export const Home = () => {
 
-  const { name, picture,
+  const { userID, name, picture,
     tipo, getSearchValue,
     setSearchValue, onSearch} = useHome()
   return (
@@ -29,7 +29,7 @@ export const Home = () => {
               <div className="flexHome">
                 <img className="roundedImagesG" src={picture} alt="Foto de perfil" width='42' height='42' />
                 <div>
-                  <h4>Buenos días<br/><Link to='/profile'>{name}</Link></h4>
+                  <h4>Buenos días<br/><Link to={`/profile/${userID}`}>{name}</Link></h4>
                 </div>
               </div>
 

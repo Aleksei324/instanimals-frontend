@@ -13,12 +13,12 @@ export const PostHome = memo( ({data}: postProps) => {
     <div className="componentG post">
 
       <div className="titlePost">
-        <Link to={`/profile/${data.name}`}>
-          <img className="roundedImagesG" src={data.pfp} alt="Foto de perfil" width='56' height='56'/>
+        <Link to={`/profile/${data.user.userID}`}>
+          <img className="roundedImagesG" src={data.user.pic} alt="Foto de perfil" width='56' height='56'/>
         </Link>
 
         <div>
-          <b>{data.name}</b><br/>
+          <b>{data.user.name}</b><br/>
           {data.desc}
         </div>
       </div>
@@ -43,7 +43,7 @@ export const PostHome = memo( ({data}: postProps) => {
         </span>
       </div>
 
-      <CommentZone id_post={data.id} nuevoComentarioAbajo={false} maxComentarios={5} />
+      <CommentZone id_post={data.postID} nuevoComentarioAbajo={false} maxComentarios={5} />
     </div>
   );
 });

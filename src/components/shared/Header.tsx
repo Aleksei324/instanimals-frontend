@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 
 export const Header = () => {
 
-  const {tipo, picture} = useSelector( (state: any) => state.userSlice)
+  const {userID, tipo, picture} = useSelector( (state: any) => state.userSlice)
   return (
     <header className="header">
       <Link className="titleHeader" to="/home"> INSTANIMALS </Link>
@@ -29,7 +29,7 @@ export const Header = () => {
           :
           <></>
         }
-        <Link className="spaceHeader" to="/profile">
+        <Link className="spaceHeader" to={`/profile/${userID}`}>
           Mi perfil 
           <img className="iconLinksHeader roundedImagesG" src={picture} alt="Foto de perfil" width='42' height='42' />
         </Link>
