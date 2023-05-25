@@ -23,7 +23,7 @@ export const Header = () => {
 
             <Link className="spaceHeader" to="/cart">
               Carrito 
-              <img className="iconLinksHeader" src="/icons/cart.png" alt="Carrito de compras" width='20' height='20' />
+              <img className="iconLinksHeader" src="/icons/cart_y.png" alt="Carrito de compras" width='20' height='20' />
             </Link>
           </>
           :

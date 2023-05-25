@@ -85,6 +85,29 @@ export const placeholderPosts = [
   }
 ]
 
+export const placeholderAds = [
+  {
+    postID: '1',
+    user: {
+      userID: placeholderProfiles[2].userID,
+      name: placeholderProfiles[2].name
+    },
+    pic: '/placeholders/post-photo-5.jpg',
+    name: 'Orion es un amor de perrito',
+    price: 72
+  },
+  {
+    postID: '2',
+    user: {
+      userID: placeholderProfiles[2].userID,
+      name: placeholderProfiles[2].name
+    },
+    pic: '/placeholders/post-photo-1.jpg',
+    name: 'Probando mi nueva cajita',
+    price: 500
+  }
+]
+
 export const placeholderComments = [
   {
     name: 'Juanjo',

@@ -1,11 +1,16 @@
-.welcomeHome {
-  margin: 3rem;
-  margin-left: 3%;
-  margin-right: 3%;
-  padding: 0.5rem;
+.sideHome {
+  margin: 1rem;
   text-align: left;
 }
-.welcomeHome > * > * {
+.sideHome > * {
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.welcomeHome {
+  text-align: left;
+}
+.welcomeHome > * {
   margin: 0.5rem;
 }
 

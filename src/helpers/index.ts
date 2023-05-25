@@ -1,3 +1,4 @@
+export * from './hooks/useAds'
 export * from './hooks/useCommentZone'
 export * from './hooks/useFeed'
 export * from './hooks/useChat'

@@ -38,7 +38,7 @@ export const Profile = () => {
             </div>
 
             <div className="feedProfile">
-              <FeedHome profileName={profileID} />
+              <FeedHome profileID={profileID} />
             </div>
           </>
         </Layout>

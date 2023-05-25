@@ -1,13 +1,13 @@
 import { useFeed } from "../helpers/";
 import { PostHome } from "./";
 
-interface feedProps {
-  profileName: string | undefined
+export interface feedProps {
+  profileID: string | undefined
 }
 
-export const FeedHome = ({profileName}: feedProps) => {
+export const FeedHome = ({profileID}: feedProps) => {
 
-  const postsArray = useFeed(profileName)
+  const postsArray = useFeed(profileID)
 
   return (
     <>
