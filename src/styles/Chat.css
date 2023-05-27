@@ -1,40 +1,48 @@
 .chat {
   background-color: var(--dark-component);
   border-radius: 2rem 2rem 0 0;
-  padding: 1rem;
+  padding-top: 1rem;
 
   position: fixed;
   bottom: 0;
   left: 50%;
   height: 50rem;
-  width: 38rem;
   transform: translate(-50%, 0);
 }
 
 .gradientChat {
-  position: fixed;
-  bottom: 29rem;
-  left: 50%;
+  border-radius: 2rem 2rem 0 0;
   height: 20rem;
-  width: 35rem;
+  width: inherit;
+
+  position: fixed;
+  bottom: 30rem;
+  left: 50%;
   transform: translate(-50%, 0);
   z-index: 2;
+
   background: linear-gradient(0deg,
     rgba(255,255,255,0) 0%, 
     var(--dark-component) 100%);
 }
 
+
 .chatInput {
   position: fixed;
-  bottom: 0.5rem;
+  bottom: 1rem;
+  width: inherit;
 }
 .chatInput > input {
   background-image: url('/icons/send.png');
+  width: 84%;
+}
+.chatInput > button {
+  width: 15%;
 }
 
+
 .chatComments {
-  position: fixed;
-  bottom: 3rem;
+  width: inherit;
 }
 
 @media (prefers-color-scheme: light) {

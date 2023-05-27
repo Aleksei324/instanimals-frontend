@@ -72,6 +72,14 @@ export const userSlice = createSlice({
       state.auth = true
       state.loading = false
     },
+    logout: (state) => {
+      state.userID = ''
+      state.name = ''
+      state.picture = ''
+      state.tipo = ''
+      state.auth = false
+      state.loading = false
+    },
     authError: (state) => {
       state.loading = false
       state.errorL = !(state.errorL)
@@ -84,5 +92,5 @@ export const userSlice = createSlice({
 
 export const {
   changeQuantityCart, removeFromCart, removeAllFromCart,
-  addToCart, waitAuth, authComplete, authError, changePic
+  addToCart, waitAuth, authComplete, authError, changePic, logout
 } = userSlice.actions
