@@ -1,7 +1,13 @@
 .popupShared {
-  z-index: 3;
+  z-index: 6;
+}
+
+.popupBoxG {
+	z-index: 7;
 	position: fixed;
-	top: 10%;
+	top: 50%;
 	left: 50%;
-  transform: translate(-50%, 0);
+  transform: translate(50%, 50%);
+	width: fit-content;
+	height: fit-content;
 }

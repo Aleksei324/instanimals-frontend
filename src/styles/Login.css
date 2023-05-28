@@ -53,7 +53,7 @@
 }
 
 .img_bgLogin {
-  background-image: url('/bg/bg-login-by-LaBruixa-Pixabay-dark.png');
+  background-image: url('/bg/bg-login-LaBruixa-Pixabay-d.png');
   background-repeat: no-repeat;
   background-position: center;
   bottom:0;
@@ -87,7 +87,7 @@
 
 @media (prefers-color-scheme: light) {
   .img_bgLogin {
-    background-image: url('/bg/bg-login-by-LaBruixa-Pixabay-light.png');
+    background-image: url('/bg/bg-login-LaBruixa-Pixabay-l.png');
   }
   .diagonal_bgLogin {
     background-image: linear-gradient(-70deg, var(--light-bg) 50%, #00000000 50%);

@@ -16,11 +16,25 @@ export const Chat = () => {
           </div>
         </div>
         <div className="row">
-          <div className="chatInput inputAndButtonCommentG col-12">
+
+          {
+            /** small: 12 (+3),
+             * medium: 8 + 3 (+1),
+             * large:  9 + 2 (+1)
+             * */
+          }
+
+          <form className="chatInput inputAndButtonCommentG col-12" onSubmit={(event) => {event.preventDefault(); buttonAction()} }>
             <label className="visually-hidden" htmlFor="inputChat">Añadir mensaje en el chat</label>
-            <input type="text" id="inputChat" value={inputText} onChange={(x) => setInputText(x.target.value)} placeholder="Publica un mensaje en el chat general..." maxLength={50} />
-            <button onClick={() => buttonAction()}>Enviar</button>
-          </div>
+
+            <input className="col-12 col-md-8 col-lg-9" type="text" 
+              id="inputChat" value={inputText} 
+              onChange={(x) => setInputText(x.target.value)} 
+              placeholder="Publica un mensaje en el chat general..." 
+              maxLength={50} />
+
+            <button className="col-3 col-lg-2" onClick={() => buttonAction()}>Enviar</button>
+          </form>
         </div>
       </div>
     </div>

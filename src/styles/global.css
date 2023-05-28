@@ -77,7 +77,8 @@ a:hover {
   border-radius: 1.5rem 0rem 0rem 1.5rem;
   padding: 0.25rem;
   padding-left: 40px;
-  margin-right: 0.25rem;
+  margin-right: 0.2rem;
+  margin-left: 0.2rem;
   text-align: center;
   background-repeat: no-repeat;
   background-position: left center;
@@ -125,8 +126,6 @@ a:hover {
 .componentG {
   background-color: var(--dark-component);
   border-radius: 2rem;
-  width:fit-content;
-  height: fit-content;
 }
 
 
@@ -138,16 +137,20 @@ a:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 2;
   animation: 1s fadeInSombra;
   animation-fill-mode: forwards;
 }
 @keyframes fadeInSombra {
   0% {
+    display: hidden;
+    opacity: 0;
+  }
+  1% {
+    display: block;
     opacity: 0;
   }
   100% {
-    visibility: visible;
+    display: block;
     opacity: 0.2;
   }
 }
@@ -161,6 +164,10 @@ a:hover {
 }
 
 
+.flexG {
+  display: flex;
+}
+
 .onlyFooterG > footer {
   position: fixed;
   bottom: 0;
@@ -173,5 +180,14 @@ a:hover {
   }
   .componentG {
     background-color: var(--light-component) !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .inputAndButtonCommentG > button {
+    display: none;
+  }
+  .inputAndButtonCommentG > input {
+    border-radius: 1.5rem;
   }
 }

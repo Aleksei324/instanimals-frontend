@@ -8,18 +8,18 @@ interface popupProps {
 
 export const Popup = ({activation, setActivation, children}: popupProps) => {
   return (
-    <>
+    <div className='popupShared'>
     { 
-      activation ? 
+      activation ?
       <>
         <div className="sombraG" onClick={() => setActivation(false)}/>
-        <div className="componentG popupShared">
+        <div className="componentG popupBoxShared">
           {children}
         </div>
       </>
       :
-      <div/>
+      <></>
     }
-    </>
+    </div>
   )
 };

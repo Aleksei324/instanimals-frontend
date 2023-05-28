@@ -34,12 +34,7 @@
 }
 .chatInput > input {
   background-image: url('/icons/send.png');
-  width: 84%;
 }
-.chatInput > button {
-  width: 15%;
-}
-
 
 .chatComments {
   width: inherit;

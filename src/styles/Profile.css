@@ -1,23 +1,13 @@
-.flexProfile {
-  display: flex;
-}
-
-.componentProfile {
-  margin-left: auto;
-  margin-right: auto;
-  width: fit-content;
-}
-
 .pfpProfile {
   transform: translate(0, -25%);
   margin-left: 2rem;
+  z-index: 2;
 }
 
 .bannerProfile {
   border-radius: 2rem 2rem 0rem 0rem;
-  width: 80rem;
+  width: inherit;
   height: 25rem;
-  background-image: url('/bg/banner-profile-by-Oberholster-Venita-pixabay.jpg');
 }
 
 .textoProfile {
@@ -29,10 +19,4 @@
 }
 .textoProfile > p {
   font-size: 1.5rem;
-}
-
-.feedProfile {
-  margin-left: auto;
-  margin-right: auto;
-  width: fit-content;
 }

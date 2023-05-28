@@ -19,26 +19,36 @@ export const Profile = () => {
             <br/>
             <br/>
             <br/>
-            <div className="componentG componentProfile">
-              <div className="bannerProfile" />
-              <div className="flexProfile">
-                <img className="roundedImagesG pfpProfile" src={getProfilePic} alt="big profile picture" width='250' height='250' />
-                <div className="textoProfile">
-                  {
-                    getProfileTipo === 'USER'?
-                    <span>{getProfileA1} &bull; {getProfileA2} {getProfileA2 === 1 ? 'año' : 'años'} de edad</span>
-                    :
-                    <span>NIT {getProfileA1}</span>
-                  }
-                  <h1>{getProfileName}</h1>
-                  <hr/>
-                  <p>{getProfileDesc}</p>
+            <div className="container">
+
+              <div className="row g-0">
+                <div className="componentG col-12">
+                  <img className="bannerProfile" alt="Colourful banner" src='/bg/banner-pfp-Oberholster-Venita-pixabay.jpg' />
+                  <div className="flexG">
+                    <img className="roundedImagesG pfpProfile" src={getProfilePic} alt="big profile picture" width='250' height='250' />
+                    <div className="textoProfile">
+                      {
+                        getProfileTipo === 'USER'?
+                        <span>{getProfileA1} &bull; {getProfileA2} {getProfileA2 === 1 ? 'año' : 'años'} de edad</span>
+                        :
+                        <span>NIT {getProfileA1}</span>
+                      }
+                      <h1>{getProfileName}</h1>
+                      <hr/>
+                      <p>{getProfileDesc}</p>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="feedProfile">
-              <FeedHome profileID={profileID} />
+              <div className="row">
+                <div className="col-1"></div>
+                <div className="col-10 justify-content-center">
+                  <FeedHome profileID={profileID} />
+                  <div className="popupBoxG"></div>
+                </div>
+                <div className="col-1"></div>
+              </div>
             </div>
           </>
         </Layout>
