@@ -1,5 +1,6 @@
-import { memo } from "react";
-import { adsParams } from "../helpers";
+import { memo } from "react"
+import { adsParams } from "../helpers"
+import '../styles/AdHome.css'
 
 interface adProps {
   data: adsParams
@@ -7,20 +8,24 @@ interface adProps {
 
 export const AdHome = memo( ({data}: adProps) => {
   return (
-    <div className="componentG">
-      <div>
-        {data.name}<br/>
-        {data.user.name}<br/>
-        {data.price}
+    <div className="componentG ad container">
+      <div className="row">
+        <div className="col-12">
+          <h4>{data.name}</h4>
+          <p>{data.user.name}</p>
+          <h5><b>${data.price}</b></h5>
+        </div>
       </div>
 
-      <div>
-        <img className="imagePost" src={data.pic}
-          alt="Imagen de la publicación" width='300' />
+      <div className="row">
+        <div className="col-12">
+          <img className="imagePost" src={data.pic}
+            alt="Imagen del anuncio" />
+        </div>
       </div>
-      
-      <div>
-        <button className="yellowButtonG">
+
+      <div className="row">
+        <button className="yellowButtonG comprarButtonAd col-11 align-items-center">
           <img src="/icons/cart.png" width='25' height='25' alt='' />
           Agregar al carrito
         </button>

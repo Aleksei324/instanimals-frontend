@@ -5,12 +5,12 @@
   padding: 0.5rem;
   margin: 0;
   z-index: 5;
+  min-height: 4.5rem;
 
   background-color: var(--dark-component);
   opacity: 0.95;
   border-bottom: 1px solid var(--primary-colour);
 
-  display: flex;
   justify-content: space-between;
   align-items: center;
 }

@@ -12,7 +12,7 @@ export const PostHome = memo( ({data}: postProps) => {
 
   const {likeAction, commentAction, getLiked, getLikes} = usePost(data)
   return (
-    <div className="componentG post component">
+    <div className="componentG post container">
 
       <div className="titlePost row">
         <div className="col-12 flexG">
@@ -29,7 +29,7 @@ export const PostHome = memo( ({data}: postProps) => {
 
       <div className="row">
         <div className="col-12">
-          <img className="imagePost img-fluid" src={data.pic}
+          <img className="imagePost" src={data.pic}
             alt="Imagen de la publicación" />
         </div>
       </div>

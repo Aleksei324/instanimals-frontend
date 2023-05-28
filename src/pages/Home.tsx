@@ -16,39 +16,57 @@ export const Home = () => {
           <>
           <br/>
           <br/>
-          <div className="flexHome">
+          <br/>
+          <div className="container-fluent">
+            <div className="row">
 
-            <div className="sideHome">
-              <div className="welcomeHome componentG">
+              {
+                /** small: 12 + 12 (+2),
+                 * medium: 5 + 7 (+2),
+                 * large:  5 + 7 (+2),
+                 * xl:     4 + 6 + 2
+                 * */
+              }
 
-                <form onSubmit={() => onSearch()}>
-                  <label className='sr-only ultraHiddenG' htmlFor='inputSearchProfile'>Buscar perfil</label>
-                  <input className="yellowInputTextG searchWelcomeHome" id="inputSearchProfile"
-                    value={getSearchValue} onChange={(evt) => setSearchValue(evt.target.value)} 
-                    type="search" placeholder="Buscar perfiles" /><br/>
-                </form>
+              <div className="col-12 col-md-5 col-xl-4 sideHome">
 
-                <div className="flexHome">
-                  <img className="roundedImagesG" src={picture} alt="Foto de perfil" width='42' height='42' />
-                  <div>
-                    <h4>Buenos días<br/><Link to={`/profile/${userID}`}>{name}</Link></h4>
+                <div className="welcomeHome componentG container-fluent">
+
+                  <form className="row" onSubmit={() => onSearch()}>
+                    <label className='visually-hidden' htmlFor='inputSearchProfile'>Buscar perfil</label>
+
+                    <input className="yellowInputTextG searchWelcomeHome" id="inputSearchProfile"
+                      value={getSearchValue} onChange={(evt) => setSearchValue(evt.target.value)} 
+                      type="search" placeholder="Buscar perfiles" />
+                  </form>
+
+                  <div className="row">
+                    <Link className="col-1 col-md-2" to={`/profile/${userID}`}>
+                      <img className="roundedImagesG" src={picture} alt="Foto de perfil" width='42' height='42' />
+                    </Link>
+                    
+                    <h4 className="col-11 col-md-10">Buenos días {name}</h4>
+                  </div>
+
+                  <p>Tus fotos más recientes:</p>
+                  <div className="fotosRecientesHome row g-1">
+                    <img className="col-4" src="/placeholders/post-photo-1.jpg" alt='foto reciente' />
+                    <img className="col-4" src="/placeholders/post-photo-2.jpg" alt='foto reciente' />
+                    <img className="col-4" src="/placeholders/post-photo-3.jpg" alt='foto reciente' />
                   </div>
                 </div>
 
-                <div className="fotosRecientesHome">
-                  Tus fotos más recientes:<br/>
-                  <img src="/placeholders/post-photo-1.jpg" alt='foto reciente' width='100' height='100' />
-                  <img src="/placeholders/post-photo-2.jpg" alt='foto reciente' width='100' height='100' />
-                  <img src="/placeholders/post-photo-3.jpg" alt='foto reciente' width='100' height='100' /><br/>
-                  <img src="/placeholders/post-photo-4.jpg" alt='foto reciente' width='100' height='100' />
-                  <img src="/placeholders/post-photo-5.jpg" alt='foto reciente' width='100' height='100' />
+                <div className="d-none d-md-block">
+                  <AdsSideHome profileID='' />
                 </div>
               </div>
-              <AdsSideHome profileID='' />
-            </div>
-            
-            <div>
-              <FeedHome profileID='' />
+
+              <div className="col-12 col-md-7 col-xl-6">
+                <FeedHome profileID='' />
+              </div>
+
+              <div className="col-2" />
+
             </div>
           </div>
           </>

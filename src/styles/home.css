@@ -1,33 +1,26 @@
 .sideHome {
-  margin: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
   text-align: left;
-}
-.sideHome > * {
-  margin: 1rem;
-  padding: 1rem;
 }
 
 .welcomeHome {
   text-align: left;
-}
-.welcomeHome > * {
-  margin: 0.5rem;
-}
-
-.flexHome {
-  display: flex;
+  padding: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .fotosRecientesHome > img {
-  border-radius: 1rem;
-  margin: 0.1rem;
+  border-radius: 1.5rem;
 }
 
 .searchWelcomeHome {
   font-size: 1.3rem;
-  width: 19rem;
   text-align: center;
   padding: 0.3rem;
+  margin-bottom: 1rem;
+
   padding-left: 40px;
   background-repeat: no-repeat;
   background-position: left center;
