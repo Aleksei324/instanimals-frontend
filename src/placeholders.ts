@@ -1,3 +1,6 @@
+import { adsParams, stateParams } from "./helpers"
+
+
 export const placeholderProfiles = [
   {
     userID: '2121335',
@@ -26,6 +29,7 @@ export const placeholderProfiles = [
     nit: '3243655465633532432453563'
   }
 ]
+
 
 export const placeholderPosts = [
   {
@@ -85,16 +89,17 @@ export const placeholderPosts = [
   }
 ]
 
-export const placeholderAds = [
+
+export const placeholderAds: adsParams[] = [
   {
     postID: '1',
     user: {
       userID: placeholderProfiles[2].userID,
       name: placeholderProfiles[2].name
     },
-    pic: '/placeholders/post-photo-5.jpg',
-    name: 'Orion es un amor de perrito',
-    price: 72
+    pic: '/placeholders/post-photo-1.jpg',
+    name: 'Juguete para gato tipo pez',
+    price: 15000
   },
   {
     postID: '2',
@@ -102,13 +107,34 @@ export const placeholderAds = [
       userID: placeholderProfiles[2].userID,
       name: placeholderProfiles[2].name
     },
-    pic: '/placeholders/post-photo-1.jpg',
-    name: 'Probando mi nueva cajita',
-    price: 500
+    pic: '/placeholders/post-photo-2.jpg',
+    name: 'Comida para gato marca adulto',
+    price: 11000
+  },
+  {
+    postID: '3',
+    user: {
+      userID: placeholderProfiles[2].userID,
+      name: placeholderProfiles[2].name
+    },
+    pic: '/placeholders/post-photo-3.jpg',
+    name: 'Collar para perro',
+    price: 9000
+  },
+  {
+    postID: '4',
+    user: {
+      userID: placeholderProfiles[2].userID,
+      name: placeholderProfiles[2].name
+    },
+    pic: '/placeholders/post-photo-4.jpg',
+    name: 'Alimento vegetariano para gatitos',
+    price: 16000
   }
 ]
 
-export const placeholderComments = [
+
+export const placeholderComments: stateParams[] = [
   {
     name: 'Juanjo',
     text: 'Hey, que tal?'

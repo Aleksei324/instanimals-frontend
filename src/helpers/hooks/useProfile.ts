@@ -16,38 +16,16 @@ export const useProfile = () => {
 
   useEffect(() => {
     // TODO get profile with api
-    let temp
-    if (profileID === '2121335') {
-      temp = placeholderProfiles[0]
+    const id = placeholderProfiles.findIndex(x => x.userID === profileID)
 
+    if (id !== -1) {
       setExistPage(true)
-      setProfileName(temp.name)
-      setProfileTipo(temp.tipo)
-      setProfilePic(temp.pic)
-      setProfileDesc(temp.desc)
-      setProfileA1(temp.raza || '')
-      setProfileA2(temp.edad || 0)
-    }
-    else if (profileID === '2121336') {
-      temp = placeholderProfiles[1]
-
-      setExistPage(true)
-      setProfileName(temp.name)
-      setProfileTipo(temp.tipo)
-      setProfilePic(temp.pic)
-      setProfileDesc(temp.desc)
-      setProfileA1(temp.raza || '')
-      setProfileA2(temp.edad || 0)
-    }
-    else if (profileID === '2121337') {
-      temp = placeholderProfiles[2]
-
-      setExistPage(true)
-      setProfileName(temp.name)
-      setProfileTipo(temp.tipo)
-      setProfilePic(temp.pic)
-      setProfileDesc(temp.desc)
-      setProfileA1(temp.nit || '')
+      setProfileName(placeholderProfiles[id].name)
+      setProfileTipo(placeholderProfiles[id].tipo)
+      setProfilePic(placeholderProfiles[id].pic)
+      setProfileDesc(placeholderProfiles[id].desc)
+      setProfileA1(placeholderProfiles[id].raza || '')
+      setProfileA2(placeholderProfiles[id].edad || 0)
     }
     else {
       setExistPage(false)

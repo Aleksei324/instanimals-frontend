@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { adsParams } from "../helpers";
 
 export interface cartInterface {
-  cant:number,
-  id:string
+  cant: number,
+  ad: adsParams
 }
 
 interface userInterface {
@@ -17,12 +18,7 @@ interface userInterface {
 }
 
 const initialState: userInterface = {
-  cart: [
-    { id: "1", cant: 2 },
-    { id: "2", cant: 3 },
-    { id: "3", cant: 9 },
-    { id: "4", cant: 6 }
-  ],
+  cart: [],
   auth: localStorage.getItem('auth') === '1' || false, // '1'=true, '0'=false
   loading: false,
   errorL: false,
@@ -37,8 +33,8 @@ export const userSlice = createSlice({
   initialState,
   reducers: {
     changeQuantityCart: (state, action) => {
-      const { id, aumenta } = action.payload;
-      const productoID = state.cart.findIndex((product) => product.id === id);
+      const { id, aumenta } = action.payload
+      const productoID = state.cart.findIndex((product) => product.ad.postID === id)
     
       if (productoID !== -1) {
         if (aumenta) {
@@ -50,15 +46,15 @@ export const userSlice = createSlice({
       // payload es objeto con un boolean sobre si aumenta el valor, y el id del objeto
     },
     removeFromCart: (state, action) => {
-      const updatedCart = state.cart.filter((product) => product.id !== action.payload);
+      const updatedCart = state.cart.filter((product) => product.ad.postID !== action.payload);
       state.cart = [...updatedCart];
     },
     removeAllFromCart: (state) => {
       state.cart = []
     },
     addToCart: (state, action) => {
-      if (!( state.cart.some(x => {x.id === action.payload.id}) )){
-        state.cart.push(action.payload) // payload es un nuevo item (objeto con cant=1 e id)
+      if (!( state.cart.some(x => {x.ad.postID === action.payload.id}) )){
+        state.cart.push(action.payload) // payload es un nuevo item (objeto con cant=1 y todos los datos)
       }
     },
     waitAuth: (state) => {

@@ -39,10 +39,10 @@
 }
 
 .likedPost {
-  background-color: var(--error-colour);
+  background-color: var(--error-colour) !important;
 }
 .likedPost:hover {
-  background-color: red;
+  background-color: red !important;
 }
 
 .inputComentarioPost {

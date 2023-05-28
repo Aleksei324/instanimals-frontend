@@ -1,68 +1,68 @@
-.visibleCart {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  margin-top: 10%;
-}
-
 .cartSectionPost {
   display: flex;
   padding: 1rem;
   align-items: center;
   justify-content: space-between;
-  
+  font-size: 1.5rem;
+  text-align: left;
+}
+
+.itemTextCart > * {
+  margin: 0;
+  text-align: left;
 }
 
 .cartItem {
-  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
 }
-.cartItem > * {
-  margin: 1rem;
-}
+
 .cartReduce{
-  align-items: center;
-  
+  align-items: right;
 }
-  .yellowButtonCart {
-    border-radius: 1.5rem;
-    border: none;
-    font-size: 1.5rem;
-    font-weight: bold;
-    font-family: inherit;
-    background-color: var(--primary-colour);
-    color: var(--text-in-colour);
-    transition-duration: 0.5s;
-    width: fit-content;
-  }
-  .yellowButtonCart:hover {
-    background-color: var(--secondary-colour);
-  }
-  
-  .redButtonCart {
-    border-radius: 1.5rem;
-    border: none;
-    font-size: 1.5rem;
-    font-weight: bold;
-    font-family: inherit;
-    background-color: #EB1C41;
-    color: var(--text-in-colour);
-    transition-duration: 0.5s;
-  }
-  .redButtonCart:hover {
-    background-color: var(--secondary-colour);
-  }
-  
-  .cantidadCart {
-    background-color: transparent;
-    text-decoration: none;
-    border: none;
-    
-  }
 
-  hr{
-    background-color: black;
-  }
+.yellowButtonCart {
+  text-align: center;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 2rem;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: inherit;
+  background-color: var(--primary-colour);
+  color: var(--text-in-colour);
+  transition-duration: 0.5s;
+}
+.yellowButtonCart:hover {
+  background-color: var(--secondary-colour);
+}
 
-  img{
+.redButtonCart {
+  border-radius: 2rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  font-weight: 600;
+  border: none;
+  font-size: 1.5rem;
+  background-color: var(--error-colour);
+  color: var(--text-in-colour);
+  transition-duration: 0.5s;
+}
+.redButtonCart:hover {
+  background-color: red;
+}
+.fullRedButtonCart {
+  width: 100%;
+}
 
-  }
+.cantidadCart {
+  background-color: transparent;
+  text-decoration: none;
+  border: none;
+  color: var(--text-in-colour);
+}
+
+.imgItemCart {
+  border-radius: 2rem;
+}

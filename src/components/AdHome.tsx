@@ -1,5 +1,5 @@
 import { memo } from "react"
-import { adsParams } from "../helpers"
+import { adsParams, useAdHome } from "../helpers"
 import '../styles/AdHome.css'
 
 interface adProps {
@@ -7,6 +7,8 @@ interface adProps {
 }
 
 export const AdHome = memo( ({data}: adProps) => {
+
+  const {onAdd, getBought} = useAdHome(data)
   return (
     <div className="componentG ad container">
       <div className="row">
@@ -24,8 +26,8 @@ export const AdHome = memo( ({data}: adProps) => {
         </div>
       </div>
 
-      <div className="row">
-        <button className="yellowButtonG comprarButtonAd col-11 align-items-center">
+      <div className="row justify-content-center">
+        <button onClick={() => onAdd()} className={`yellowButtonG comprarButtonAd col-11 ${getBought ? 'likedPost':''}`}>
           <img src="/icons/cart.png" width='25' height='25' alt='' />
           Agregar al carrito
         </button>

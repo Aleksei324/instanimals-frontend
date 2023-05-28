@@ -34,24 +34,22 @@ export const PostHome = memo( ({data}: postProps) => {
         </div>
       </div>
 
-      <div className="row align-items-center">
+      <div className="row justify-content-center">
 
         {
-          /** small: 1 + 3 + 8(11 + 1), 
-           * medium: 1 + 3 + 8(7 + 4 + 1), 
-           * large:  1 + 2 + 9(8 + 3 + 1)
+          /** small: (1) + 3 + 8(11 + 1), 
+           * medium: (1) + 3 + 8(7 + 4 + 1), 
+           * large:  (1) + 2 + 9(8 + 3 + 1)
            * */
         }
-
-        <div className="col-1" />
 
         <button className={`likeButtonPost col-3 col-lg-2 ${getLiked ? 'likedPost':''}`} onClick={() => likeAction()}>
           <img src="/icons/love.png" width='25' height='25' alt='' />
           {getLikes}
         </button>
 
-        <span className="col-8 col-md-8 col-lg-9">
-          <form className="row inputAndButtonCommentG" onSubmit={(event) => {event.preventDefault(); commentAction()} }>
+        <span className="col-8 col-lg-9">
+          <form className="row justify-content-center inputAndButtonCommentG" onSubmit={(event) => {event.preventDefault(); commentAction()} }>
 
             <label className="visually-hidden" htmlFor={`${data.postID}commentInput`}>Añadir comentario en el post</label>
             
@@ -59,8 +57,6 @@ export const PostHome = memo( ({data}: postProps) => {
               type='text' placeholder='Deja un comentario...' maxLength={50} />
 
             <button onClick={() => commentAction()} className="col-4 col-lg-3">Publicar</button>
-
-            <div className="col-1" />
           </form>
         </span>
 

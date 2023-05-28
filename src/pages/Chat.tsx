@@ -20,20 +20,21 @@ export const Chat = () => {
           {
             /** small: 12 (+3),
              * medium: 8 + 3 (+1),
-             * large:  9 + 2 (+1)
+             * large:  9 + 2 (+1),
+             * xl:    10 + 1 (+1)
              * */
           }
 
           <form className="chatInput inputAndButtonCommentG col-12" onSubmit={(event) => {event.preventDefault(); buttonAction()} }>
             <label className="visually-hidden" htmlFor="inputChat">Añadir mensaje en el chat</label>
 
-            <input className="col-12 col-md-8 col-lg-9" type="text" 
+            <input className="col-12 col-md-8 col-lg-9 col-xl-10" type="text" 
               id="inputChat" value={inputText} 
               onChange={(x) => setInputText(x.target.value)} 
               placeholder="Publica un mensaje en el chat general..." 
               maxLength={50} />
 
-            <button className="col-3 col-lg-2" onClick={() => buttonAction()}>Enviar</button>
+            <button className="col-3 col-lg-2 col-xl-1" onClick={() => buttonAction()}>Enviar</button>
           </form>
         </div>
       </div>
