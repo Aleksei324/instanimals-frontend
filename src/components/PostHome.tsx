@@ -22,7 +22,7 @@ export const PostHome = memo( ({data}: postProps) => {
           </Link>
 
           <div>
-            <h3><b>{data.user.name}</b></h3>
+            <h2>{data.user.name}</h2>
             {data.desc}
           </div>
         </div>

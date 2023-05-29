@@ -16,9 +16,9 @@ export const AdHome = memo( ({data}: adProps) => {
         <div className="col-12">
           <h4>{data.name}</h4>
           <Link title="Ver perfil" to={`/profile/${data.user.userID}`}>
-            {data.user.name}
+            <h5>{data.user.name}</h5>
           </Link>
-          <h5><b>${data.price}</b></h5>
+          <h5><b>$ {data.price}</b></h5>
         </div>
       </div>
 

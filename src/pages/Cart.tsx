@@ -70,8 +70,8 @@ export const Cart = () => {
                 </div>
                 <hr/>
                 <div className="cartSectionPost">
-                  <span><b>Envío:</b> ${(getTotal * 0.05).toFixed(2)}<br/>
-                  <b>Total:</b> ${(getTotal + getTotal * 0.05).toFixed(2)}</span>
+                  <span><b>Envío:</b> $ {(getTotal * 0.05).toFixed(2)}<br/>
+                  <b>Total:</b> $ {(getTotal + getTotal * 0.05).toFixed(2)}</span>
                 </div>
                 <button className="yellowButtonCart fullRedButtonCart" onClick={() => console.log('comprar')}>Comprar</button>
                 
@@ -90,7 +90,7 @@ export const Cart = () => {
                               <div className="itemTextCart">
                                 <h3>{item.ad.name}</h3>
                                 <p>{item.ad.user.name}</p>
-                                <h4><b>${item.ad.price}</b></h4>
+                                <h4><b>$ {item.ad.price}</b></h4>
                               </div>
 
                               <div />
