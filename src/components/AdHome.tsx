@@ -28,10 +28,9 @@ export const AdHome = memo( ({data}: adProps) => {
 
       <div className="row justify-content-center">
         <button onClick={() => onAdd()} className={`yellowButtonG comprarButtonAd col-11 ${getBought ? 'likedPost':''}`}>
-          <img src="/icons/cart.png" width='25' height='25' alt='' />
-          Agregar al carrito
+          <img src="/icons/cart.png" width='25' height='25' alt='' /> Agregar al carrito
         </button>
       </div>
     </div>
-  );
-});
+  )
+})

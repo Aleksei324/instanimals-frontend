@@ -47,7 +47,7 @@ a:hover {
   border-radius: 1.5rem;
   border: none;
   font-size: 1.5rem;
-  font-weight: bold;
+  font-weight: 600;
   font-family: inherit;
   background-color: var(--primary-colour);
   color: var(--text-in-colour);

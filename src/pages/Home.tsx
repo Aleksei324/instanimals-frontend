@@ -21,14 +21,14 @@ export const Home = () => {
             <div className="row">
 
               {
-                /** small: 12 + 12 (+2),
-                 * medium: 5 + 7 (+2),
-                 * large:  5 + 7 (+2),
-                 * xl:     4 + 6 + 2
+                /** small: 12 + 12 (+3),
+                 * medium:  5 +  7 (+3),
+                 * large:   5 +  7 (+3),
+                 * xl:      3 +  6 + 3
                  * */
               }
 
-              <div className="col-12 col-md-5 col-xl-4 sideHome">
+              <div className="col-12 col-md-5 col-xl-3 sideHome">
 
                 <div className="welcomeHome componentG container-fluent">
 
@@ -40,12 +40,12 @@ export const Home = () => {
                       type="search" placeholder="Buscar perfiles" />
                   </form>
 
-                  <div className="row">
-                    <Link className="col-1 col-md-2" to={`/profile/${userID}`}>
-                      <img className="roundedImagesG" src={picture} alt="Foto de perfil" width='42' height='42' />
+                  <div className="flexG">
+                    <Link className="sidePfpHome" to={`/profile/${userID}`}>
+                      <img className="roundedImagesG" src={picture} alt="Foto de perfil" width='72' height='72' />
                     </Link>
                     
-                    <h4 className="col-11 col-md-10">Buenos días {name}</h4>
+                    <h2>Buenos días<br/>{name}</h2>
                   </div>
 
                   <p>Tus fotos más recientes:</p>
@@ -64,8 +64,6 @@ export const Home = () => {
               <div className="col-12 col-md-7 col-xl-6">
                 <FeedHome profileID='' />
               </div>
-
-              <div className="col-2" />
 
             </div>
           </div>

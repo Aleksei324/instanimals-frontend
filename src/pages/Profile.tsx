@@ -24,11 +24,11 @@ export const Profile = () => {
               <div className="row g-0">
                 <div className="componentG col-12">
                   <img className="bannerProfile" alt="Colourful banner" src='/bg/banner-pfp-Oberholster-Venita-pixabay.jpg' />
-                  <div className="flexG">
+                  <div className="flexG profileDesc">
                     <img className="roundedImagesG pfpProfile" src={getProfilePic} alt="big profile picture" width='250' height='250' />
                     <div className="textoProfile">
                       {
-                        getProfileTipo === 'USER'?
+                        getProfileTipo === 'USER' ?
                         <span>{getProfileA1} &bull; {getProfileA2} {getProfileA2 === 1 ? 'año' : 'años'} de edad</span>
                         :
                         <span>NIT {getProfileA1}</span>
@@ -41,13 +41,13 @@ export const Profile = () => {
                 </div>
               </div>
 
-              <div className="row">
-                <div className="col-1"></div>
-                <div className="col-10 justify-content-center">
+              <div className="row g-0 justify-content-center">
+                <div className="col-2" />
+                <div className="col-8">
                   <FeedHome profileID={profileID} />
                   <div className="popupBoxG"></div>
                 </div>
-                <div className="col-1"></div>
+                <div className="col-2" />
               </div>
             </div>
           </>
@@ -56,5 +56,5 @@ export const Profile = () => {
         <NoProfileFound/>
       }
     </>
-  );
-};
+  )
+}
