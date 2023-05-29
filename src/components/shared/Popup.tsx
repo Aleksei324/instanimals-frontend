@@ -11,18 +11,18 @@ export const Popup = ({activation, setActivation, children}: popupProps) => {
     <>
     { 
       activation ?
-      <div className='container'>
-        <div className='row justify-content-center'>
-          <div className="sombraG" onClick={() => setActivation(false)}/>
+        <div className='container'>
+          <div className='row justify-content-center'>
+            <div className="sombraG" aria-label="Close" onClick={() => setActivation(false)}/>
 
-          <div className="componentG popupBox col-6">
-            {children}
+            <div className="componentG popupBox col-6 col-xl-4" role="dialog">
+              {children}
+            </div>
+
           </div>
-
         </div>
-      </div>
       :
-      <></>
+        <></>
     }
     </>
   )

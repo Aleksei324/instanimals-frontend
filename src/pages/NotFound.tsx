@@ -5,10 +5,9 @@ export const NotFound = () => {
   /** Pagina del error 404 */
   return (
     <div className="onlyFooterG">
-      <br/>
-      <h1>404: Oops, página no encontrada</h1>
-      <Link to='/home'>Volver al inicio</Link>
+      <h1 className="notFoundG">404: Oops, página no encontrada</h1>
+      <Link to='/'><h2>Volver al inicio</h2></Link>
       <Footer/>
     </div>
   )
-};
+}

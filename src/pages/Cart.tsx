@@ -44,7 +44,7 @@ export const Cart = () => {
             <Pago tipo='ubicacion'/>
           </Popup>
 
-          <div className="container">
+          <main className="container">
             <div className="row">
               <div className="col-12 col-lg-5">
                 <div className="cartSectionPost">
@@ -113,7 +113,7 @@ export const Cart = () => {
                 </div>
               </div>  
             </div>
-          </div>
+          </main>
         </>
         :
         <NoItemsInCart />

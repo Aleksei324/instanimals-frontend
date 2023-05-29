@@ -6,7 +6,7 @@ export const AdsSideHome = ({profileID}: feedProps) => {
   const adsArray = useAds(profileID)
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid" role="feed">
       {
         adsArray.map( (post, key) => {
           return (
@@ -19,5 +19,5 @@ export const AdsSideHome = ({profileID}: feedProps) => {
         })
       }
     </div>
-  );
-};
+  )
+}

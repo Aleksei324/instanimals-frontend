@@ -1,5 +1,6 @@
 import { memo } from "react"
 import { adsParams, useAdHome } from "../helpers"
+import { Link } from "react-router-dom"
 import '../styles/AdHome.css'
 
 interface adProps {
@@ -10,11 +11,13 @@ export const AdHome = memo( ({data}: adProps) => {
 
   const {onAdd, getBought} = useAdHome(data)
   return (
-    <div className="componentG ad container">
+    <article className="componentG ad container">
       <div className="row">
         <div className="col-12">
           <h4>{data.name}</h4>
-          <p>{data.user.name}</p>
+          <Link title="Ver perfil" to={`/profile/${data.user.userID}`}>
+            {data.user.name}
+          </Link>
           <h5><b>${data.price}</b></h5>
         </div>
       </div>
@@ -31,6 +34,6 @@ export const AdHome = memo( ({data}: adProps) => {
           <img src="/icons/cart.png" width='25' height='25' alt='' /> Agregar al carrito
         </button>
       </div>
-    </div>
+    </article>
   )
 })

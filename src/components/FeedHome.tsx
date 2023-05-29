@@ -10,7 +10,7 @@ export const FeedHome = ({profileID}: feedProps) => {
   const postsArray = useFeed(profileID)
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid" role="feed">
       {
         postsArray.map( (post, key) => {
           return (

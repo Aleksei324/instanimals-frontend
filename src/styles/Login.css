@@ -8,6 +8,7 @@
   color: var(--primary-colour);
   font-size: 5rem;
   margin-bottom: 0;
+  font-weight: 300;
 }
 .INSTANIMALS > p {
   text-align: center;
@@ -51,11 +52,13 @@
   background-image: url('/bg/bg-login-LaBruixa-Pixabay-d.png');
   background-repeat: no-repeat;
   background-position: center;
-  bottom:0;
-  left: -50%;
+
   position: fixed;
+  bottom: 0;
+  left: -50%;
   right: -50%;
   top: 0;
+
   z-index: -2;
 }
 .diagonal_bgLogin {

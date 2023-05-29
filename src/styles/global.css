@@ -16,15 +16,16 @@
   --dark-text: #F0F2F5;
   --text-in-colour: #FFFFFF;
 
+  color-scheme: light dark !important;
+  text-rendering: optimizeLegibility !important;
+  box-sizing: content-box;
+}
+
+body {
   font-family: IntelLocal, Inter, Helvetica, sans-serif !important;
   font-weight: 400 !important;
   text-align: center !important;
 
-  color-scheme: light dark !important;
-  text-rendering: optimizeLegibility !important;
-}
-
-body {
   margin: 0 !important;
   padding: 0 !important;
   color: var(--dark-text) !important;
@@ -33,7 +34,7 @@ body {
 
 
 a {
-  font-weight: 500 !important;
+  font-weight: 400 !important;
   color: var(--primary-colour) !important;
   text-decoration: inherit !important;
   transition-duration: 0.5s !important;
@@ -168,6 +169,11 @@ a:hover {
 
 .flexG {
   display: flex;
+}
+
+.notFoundG {
+  margin-top: 10rem;
+  margin-bottom: 3rem;
 }
 
 .onlyFooterG > footer {

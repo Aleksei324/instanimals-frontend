@@ -12,12 +12,13 @@ export const PostHome = memo( ({data}: postProps) => {
 
   const {likeAction, commentAction, getLiked, getLikes} = usePost(data)
   return (
-    <div className="componentG post container">
+    <article className="componentG post container">
 
       <div className="titlePost row">
         <div className="col-12 flexG">
-          <Link to={`/profile/${data.user.userID}`}>
-            <img className="roundedImagesG" src={data.user.pic} alt="Foto de perfil" width='56' height='56'/>
+          <Link title="Ver perfil" to={`/profile/${data.user.userID}`}>
+            <img className="roundedImagesG" src={data.user.pic}
+              alt="Foto de perfil" width='56' height='56'/>
           </Link>
 
           <div>
@@ -43,8 +44,10 @@ export const PostHome = memo( ({data}: postProps) => {
            * */
         }
 
-        <button className={`likeButtonPost col-3 col-lg-2 ${getLiked ? 'likedPost':''}`} onClick={() => likeAction()}>
-          <img src="/icons/love.png" width='25' height='25' alt='' />
+        <button className={`likeButtonPost col-3 col-lg-2 ${getLiked ? 'likedPost':''}`}
+            title="Botón de me gusta" onClick={() => likeAction()}>
+
+          <img src="/icons/love.png" width='25' height='25' alt='Corazon del botón de me gusta' />
           {getLikes}
         </button>
 
@@ -67,6 +70,6 @@ export const PostHome = memo( ({data}: postProps) => {
           <CommentZone id_post={data.postID} nuevoComentarioAbajo={false} maxComentarios={5} />
         </div>
       </div>
-    </div>
-  );
-});
+    </article>
+  )
+})

@@ -24,7 +24,7 @@ export const useProfile = () => {
       setProfileTipo(placeholderProfiles[id].tipo)
       setProfilePic(placeholderProfiles[id].pic)
       setProfileDesc(placeholderProfiles[id].desc)
-      setProfileA1(placeholderProfiles[id].raza || '')
+      setProfileA1(placeholderProfiles[id].raza || placeholderProfiles[id].nit || '')
       setProfileA2(placeholderProfiles[id].edad || 0)
     }
     else {

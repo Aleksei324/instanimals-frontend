@@ -21,7 +21,7 @@ export const Login = () => {
       <Popup activation={getRegistroVet} setActivation={setRegistroVet}>
         <Register tipo='vet'/>
       </Popup>
-      <div className="visibleLogin container">
+      <main className="visibleLogin container">
         <div className="row">
           <div className="col-12 col-lg-6 INSTANIMALS">
             <h1>INSTANIMALS</h1>
@@ -67,8 +67,8 @@ export const Login = () => {
             </div>
           </div>
         </div>
-      </div>
+      </main>
       <Footer/>
     </div>
-  );
-};
+  )
+}

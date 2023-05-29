@@ -8,10 +8,10 @@ export const Chat = () => {
   return (
     <div>
       <Header/>
-      <div className="chat container">
+      <main className="chat container">
         <div className="row">
           <div className="chatComments col-12">
-            <div className="gradientChat" />
+            <div className="gradientChat" aria-hidden="true" />
             <CommentZone id_post="" nuevoComentarioAbajo={true} maxComentarios={18} /> {/** TODO POST ID */}
           </div>
         </div>
@@ -37,7 +37,7 @@ export const Chat = () => {
             <button className="col-3 col-lg-2 col-xl-1" onClick={() => buttonAction()}>Enviar</button>
           </form>
         </div>
-      </div>
+      </main>
     </div>
   )
 };
