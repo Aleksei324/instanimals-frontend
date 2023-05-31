@@ -1,13 +1,14 @@
+.popupError {
+  padding: 1rem;
+}
+
+.buttonPopupError {
+  padding: 0.5rem;
+}
+
 .errorPopup {
-  border-radius: 1rem;
-  border: none;
-  font-size: 1.5rem;
-  font-weight: bold;
-  font-family: inherit;
-  background-color: var(--error-colour);
-  color: var(--text-in-colour);
-  transition-duration: 0.5s;
+  background-color: var(--error-colour) !important;
 }
 .errorPopup:hover {
-  background-color: var(--error-secondary-colour);
+  background-color: red !important;
 }

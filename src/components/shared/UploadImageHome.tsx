@@ -4,10 +4,10 @@ import '../../styles/shared/UploadImageHome.css'
 export const UploadImageHome = () => {
 
   const {getInteracted, setInteracted,
-    getImgUploaded, setImgUploaded,
     getValueInput, setValueInput,
     getValueInputPrice, setValueInputPrice, 
-    onPublicar, tipo} = useUploadImageHome()
+    onPublicar, tipo, onDroppedFile, getImgUploaded,
+    setInputFileChange} = useUploadImageHome()
   return (
     <>
       {
@@ -50,13 +50,25 @@ export const UploadImageHome = () => {
                 <></>
               }
               <br/>
-              <label htmlFor='filezone' className='zoneUpload labelUpload yellowLabelG'>
-                Haz click aquí para<br/>
-                subir tu imagen<br/>
-                &#40;PNG o JPG&#41;<br/>
+              <label htmlFor='filezone' className='zoneUpload labelUpload yellowLabelG' 
+                  onDrop={(evt) => onDroppedFile(evt)} onDragOver={(evt) => evt.preventDefault()}>
+                {
+                  getImgUploaded ?
+                    <>
+                      Imagen<br/>
+                      cargada con<br/>
+                      éxito<br/>
+                    </>
+                  :
+                    <>
+                      Haz click aquí para<br/>
+                      subir tu imagen<br/>
+                      &#40;PNG o JPG&#41;<br/>
+                    </>
+                }
               </label>
-              { getImgUploaded ? <p>Imagen guardada</p> : ""}
-              <input id='filezone' className='hiddenG' type='file' name='imageUpload'onChange={() => setImgUploaded(true)} accept="image/png, image/jpeg"/>
+              <input id='filezone' className='ultraHiddenG' type='file' name='imageUpload'
+                onChange={(evt) => setInputFileChange(evt.target.files)} accept="image/png, image/jpeg"/>
 
               <button className='yellowButtonG publicarUpload' onClick={() => onPublicar()}>Publicar</button>
             </div>

@@ -1,7 +1,7 @@
 import { useState, Key, useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { changeQuantityCart, removeFromCart, removeAllFromCart, cartInterface } from "../store/userSlice"
-import { Footer, Header, Pago, Popup } from "../components"
+import { Footer, Header, Pago, Popup, PopupError } from "../components"
 import { NoItemsInCart } from "./NoItemsInCart"
 import { useNavigate } from "react-router-dom"
 import '../styles/cart.css'
@@ -10,7 +10,7 @@ import '../styles/Login.css'
 export const Cart = () => {
   const [getEditarPago, setEditarPago] = useState(false)
   const [getEditarUbicacion, setEditarUbicacion] = useState(false)
-  const [up, setUp] = useState(false)
+  const [getBuyDone, setBuyDone] = useState(false)
 
   const [getNumTarjeta, setNumTarjeta] = useState(localStorage.getItem('numTarjeta') || '')
   const [getUbicacion, setUbicacion] = useState(localStorage.getItem('direccion') || '')
@@ -26,16 +26,14 @@ export const Cart = () => {
     navigate('/home')
   }
 
-  const onBuy = () => {
-
-  }
-
   useEffect(() => {
     let temp = 0
+
     for (const item of cart) {
       temp += item.cant * item.ad.price
     }
     setTotal(temp)
+
   }, [cart])
 
   return (
@@ -52,6 +50,9 @@ export const Cart = () => {
           <Popup activation={getEditarUbicacion} setActivation={setEditarUbicacion}>
             <Pago tipo='ubicacion' setActivation={setEditarUbicacion} setter={setUbicacion} />
           </Popup>
+
+          <PopupError activation={getBuyDone} setActivation={setBuyDone}
+            description="Gracias por comprar :)" isError={false} />
 
           <main className="container">
             <div className="row">
@@ -100,9 +101,9 @@ export const Cart = () => {
                   <span><b>Envío:</b> $ {(getTotal * 0.05).toFixed(2)}<br/>
                   <b>Total:</b> $ {(getTotal + getTotal * 0.05).toFixed(2)}</span>
                 </div>
-                <button className="yellowButtonCart fullRedButtonCart" onClick={() => onBuy()}>Comprar</button>
-
+                <button className="yellowButtonCart fullRedButtonCart" onClick={() => setBuyDone(true)}>Comprar</button>
               </div>
+
               <div className="cart col-12 col-lg-7">
                 <div>
                   <button className="redButtonCart fullRedButtonCart" onClick={() => onRemoveAll()}>Remover todos los items</button>

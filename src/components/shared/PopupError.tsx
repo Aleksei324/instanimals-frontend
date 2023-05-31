@@ -1,4 +1,5 @@
 import { Popup } from './Popup'
+import '../../styles/shared/PopupError.css'
 
 interface popupErrorProps {
   activation: boolean,
@@ -10,13 +11,18 @@ interface popupErrorProps {
 export const PopupError = ({activation, setActivation, description, isError = true}: popupErrorProps) => {
   return (
     <Popup activation={activation} setActivation={setActivation}>
-      <>
-        <div>
-          <b>{isError ? 'Proceso fallido' : 'Proceso exitoso'}</b><br/>
-          {description}
+      <div className='container popupError'>
+        <div className='row'>
+          <div className="col-12">
+            <h2>{isError ? 'Proceso fallido' : 'Proceso exitoso'}</h2>
+            <p>{description}</p>
+          </div>
         </div>
-        <button className={isError ? 'errorPopup' : 'yellowButtonG'} onClick={() => setActivation(false)}>Entendido</button>
-      </>
+        <div className="row">
+          <button className={`col-12 buttonPopupError yellowButtonG ${isError ? 'errorPopup' : ''}`}
+            onClick={() => setActivation(false)}> Entendido </button>
+        </div>
+      </div>
     </Popup>
   )
-};
+}
