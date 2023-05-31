@@ -23,9 +23,8 @@ export const useHome = () => {
 
   useEffect(() => {
     const temp = [
-      '/placeholders/post-photo-5.jpg',
-      '/placeholders/post-photo-4.jpg',
-      '/placeholders/post-photo-3.jpg'
+      '/placeholders/post-photo-6.png',
+      '/placeholders/post-photo-4.jpg'
     ]
 
     setRecentImages([...temp])

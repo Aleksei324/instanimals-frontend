@@ -51,7 +51,7 @@ export const Cart = () => {
             <Pago tipo='ubicacion' setActivation={setEditarUbicacion} setter={setUbicacion} />
           </Popup>
 
-          <PopupError activation={getBuyDone} setActivation={setBuyDone}
+          <PopupError activation={getBuyDone} setActivation={() => {setBuyDone(false); onRemoveAll()}}
             description="Gracias por comprar :)" isError={false} />
 
           <main className="container">

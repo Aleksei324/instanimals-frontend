@@ -29,7 +29,9 @@ export const Profile = () => {
                     <div className="flexG profileDesc">
 
                       <img className="roundedImagesG pfpProfile" src={getProfilePic==='' && profileID === userID ? '/bg/no-pfp.png' : getProfilePic} 
-                        alt="big profile picture" width='250' height='250' onClick={profileID === userID ? () => inputFile.current?.click() : () => {}} />
+                        title={profileID === userID ? "Cambia tu foto de perfil":'Foto de perfil'} alt="big profile picture" width='250' height='250' 
+                        onClick={profileID === userID ? () => inputFile.current?.click() : () => {}} />
+
                       <input className="ultraHiddenG" type='file' accept="image/png, image/jpeg"
                         ref={inputFile} onChange={(evt) => onChangeInput(evt.target.files)} />
 

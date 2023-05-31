@@ -15,18 +15,35 @@ export const placeholderProfiles = [
     userID: '2121336',
     tipo: 'USER',
     name: 'Anacleto',
-    pic: '/placeholders/profile-photo-others.jpg',
-    desc: 'Perrito de 1 añito muy cariñoso, muy amigable y juicioso',
+    pic: '/placeholders/profile-photo-other.jpg',
+    desc: 'Perrito de 1 añito muy amigable y no tan juicioso',
     raza: 'Perro',
     edad: 1
   },
   {
     userID: '2121337',
+    tipo: 'USER',
+    name: 'Orion',
+    pic: '/placeholders/profile-photo-other2.png',
+    desc: 'Doberman de 4 añitos muy cariñoso, muy amigable y juicioso',
+    raza: 'Perro',
+    edad: 4
+  },
+  {
+    userID: '3121335',
     tipo: 'VET',
     name: 'NaranjasLab',
     pic: '/placeholders/profile-photo-vet.png',
     desc: '¡somos expertos en el cuidado de tu mascota!',
-    nit: '3243655465633532432453563'
+    nit: '1322759335'
+  },
+  {
+    userID: '3121336',
+    tipo: 'VET',
+    name: 'Doggo Industries',
+    pic: '/placeholders/profile-photo-vet2.png',
+    desc: '¡Tambien somos expertos en el cuidado de las mascotas!',
+    nit: '1222123334'
   }
 ]
 
@@ -35,14 +52,14 @@ export const placeholderPosts: postParams[] = [
   {
     postID: '1',
     user: {
-      userID: placeholderProfiles[0].userID,
-      name: placeholderProfiles[0].name,
-      pic: placeholderProfiles[0].pic
+      userID: placeholderProfiles[2].userID,
+      name: placeholderProfiles[2].name,
+      pic: placeholderProfiles[2].pic
     },
     pic: '/placeholders/post-photo-5.jpg',
     desc: 'Orion es un amor de perrito',
     likes: 72,
-    liked: false
+    liked: true
   },
   {
     postID: '2',
@@ -52,43 +69,55 @@ export const placeholderPosts: postParams[] = [
       pic: placeholderProfiles[1].pic
     },
     pic: '/placeholders/post-photo-1.jpg',
-    desc: 'Probando mi nueva cajita',
+    desc: 'jajaja mira ese gato',
     likes: 500,
-    liked: true
+    liked: false
   },
   {
     postID: '3',
+    user: {
+      userID: placeholderProfiles[0].userID,
+      name: placeholderProfiles[0].name,
+      pic: placeholderProfiles[0].pic
+    },
+    pic: '/placeholders/post-photo-6.png',
+    desc: 'El gato de mi prima es todo bello',
+    likes: 50,
+    liked: false
+  },
+  {
+    postID: '4',
     user: {
       userID: placeholderProfiles[1].userID,
       name: placeholderProfiles[1].name,
       pic: placeholderProfiles[1].pic
     },
     pic: '/placeholders/post-photo-3.jpg',
-    desc: 'Cortecito pal rey que tuve hoy en la mañanita',
+    desc: 'hoy en la mañanita me encontre ese gatito jeje',
     likes: 400,
-    liked: false
+    liked: true
   },
   {
-    postID: '4',
+    postID: '5',
     user: {
       userID: placeholderProfiles[0].userID,
       name: placeholderProfiles[0].name,
       pic: placeholderProfiles[0].pic
     },
     pic: '/placeholders/post-photo-4.jpg',
-    desc: 'Descansando en mi cesped favorito',
+    desc: 'Mi otro hijito anda descansando en su cesped favorito',
     likes: 550,
     liked: false
   },
   {
-    postID: '5',
+    postID: '6',
     user: {
       userID: placeholderProfiles[1].userID,
       name: placeholderProfiles[1].name,
       pic: placeholderProfiles[1].pic
     },
     pic: '/placeholders/post-photo-2.jpg',
-    desc: 'Levantado y listo para arañar muebles',
+    desc: 'siempre levantado y listo para arañar muebles',
     likes: 60,
     liked: false
   }
@@ -99,32 +128,32 @@ export const placeholderAds: adsParams[] = [
   {
     postID: '1',
     user: {
-      userID: placeholderProfiles[2].userID,
-      name: placeholderProfiles[2].name
+      userID: placeholderProfiles[3].userID,
+      name: placeholderProfiles[3].name
     },
-    pic: '/placeholders/post-photo-1.jpg',
-    name: 'Juguete para gato tipo pez',
+    pic: '/placeholders/ad-photo-2.png',
+    name: 'Juguete para perro tipo Kong',
     price: 15000,
     bought: false
   },
   {
     postID: '2',
     user: {
-      userID: placeholderProfiles[2].userID,
-      name: placeholderProfiles[2].name
+      userID: placeholderProfiles[4].userID,
+      name: placeholderProfiles[4].name
     },
-    pic: '/placeholders/post-photo-2.jpg',
-    name: 'Comida para gato marca adulto',
+    pic: '/placeholders/ad-photo-3.png',
+    name: 'Comida para perro marca adulto',
     price: 11000,
     bought: false
   },
   {
     postID: '3',
     user: {
-      userID: placeholderProfiles[2].userID,
-      name: placeholderProfiles[2].name
+      userID: placeholderProfiles[3].userID,
+      name: placeholderProfiles[3].name
     },
-    pic: '/placeholders/post-photo-3.jpg',
+    pic: '/placeholders/ad-photo-5.png',
     name: 'Collar para perro',
     price: 9000,
     bought: false
@@ -132,10 +161,21 @@ export const placeholderAds: adsParams[] = [
   {
     postID: '4',
     user: {
-      userID: placeholderProfiles[2].userID,
-      name: placeholderProfiles[2].name
+      userID: placeholderProfiles[3].userID,
+      name: placeholderProfiles[3].name
     },
-    pic: '/placeholders/post-photo-4.jpg',
+    pic: '/placeholders/ad-photo-1.png',
+    name: 'Peluche de perrito',
+    price: 9000,
+    bought: false
+  },
+  {
+    postID: '5',
+    user: {
+      userID: placeholderProfiles[4].userID,
+      name: placeholderProfiles[4].name
+    },
+    pic: '/placeholders/ad-photo-4.png',
     name: 'Alimento vegetariano para gatitos',
     price: 16000,
     bought: false
@@ -153,7 +193,7 @@ export const placeholderComments: stateParams[] = [
     text: 'precioso'
   },
   {
-    name: 'Matru',
+    name: 'Apri',
     text: 'Graciassss'
   },
   {
@@ -161,59 +201,7 @@ export const placeholderComments: stateParams[] = [
     text: 'me encanta <3'
   },
   {
-    name: 'Juanjo',
-    text: 'Hey, que tal?'
-  },
-  {
-    name: 'Aurelio',
-    text: 'precioso'
-  },
-  {
-    name: 'Matru',
+    name: 'Orion',
     text: 'Gracias por sus comentarios'
-  },
-  {
-    name: 'Apolo',
-    text: 'me encanta <3'
-  },
-  {
-    name: 'Aurelio',
-    text: 'precioso'
-  },
-  {
-    name: 'Apolo',
-    text: 'me encanta <3'
-  },
-  {
-    name: 'Juanjo',
-    text: 'Hey, que tal?'
-  },
-  {
-    name: 'Aurelio',
-    text: 'precioso'
-  },
-  {
-    name: 'Matru',
-    text: 'Gracias sfsidufns'
-  },
-  {
-    name: 'Aurelio',
-    text: 'precioso'
-  },
-  {
-    name: 'Matru',
-    text: 'Gracias por sus comentarios'
-  },
-  {
-    name: 'Apolo',
-    text: 'me encanta <3'
-  },
-  {
-    name: 'Matru',
-    text: 'Graciasss'
-  },
-  {
-    name: 'Juanjo',
-    text: 'Hey, que tal?'
   }
 ]
