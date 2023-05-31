@@ -18,7 +18,7 @@ interface userInterface {
 }
 
 const initialState: userInterface = {
-  cart: [],
+  cart: JSON.parse(localStorage.getItem('cart') || JSON.stringify([])),
   auth: localStorage.getItem('auth') === '1' || false, // '1'=true, '0'=false
   loading: false,
   errorL: false,
@@ -43,18 +43,22 @@ export const userSlice = createSlice({
           state.cart[productoID].cant -= 1;
         }
       }
+      localStorage.setItem('cart', JSON.stringify(state.cart))
       // payload es objeto con un boolean sobre si aumenta el valor, y el id del objeto
     },
     removeFromCart: (state, action) => {
       const updatedCart = state.cart.filter((product) => product.ad.postID !== action.payload);
-      state.cart = [...updatedCart];
+      state.cart = [...updatedCart]
+      localStorage.setItem('cart', JSON.stringify(state.cart))
     },
     removeAllFromCart: (state) => {
       state.cart = []
+      localStorage.setItem('cart', JSON.stringify([]))
     },
     addToCart: (state, action) => {
       if (!( state.cart.some(x => {x.ad.postID === action.payload.id}) )){
         state.cart.push(action.payload) // payload es un nuevo item (objeto con cant=1 y todos los datos)
+        localStorage.setItem('cart', JSON.stringify(state.cart))
       }
     },
     waitAuth: (state) => {

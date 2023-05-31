@@ -10,6 +10,10 @@ import '../styles/Login.css'
 export const Cart = () => {
   const [getEditarPago, setEditarPago] = useState(false)
   const [getEditarUbicacion, setEditarUbicacion] = useState(false)
+
+  const [getNumTarjeta, setNumTarjeta] = useState(localStorage.getItem('numTarjeta') || '')
+  const [getUbicacion, setUbicacion] = useState(localStorage.getItem('direccion') || '')
+
   const [getTotal, setTotal] = useState(0)
 
   const cart = useSelector((state: any) => state.userSlice.cart)
@@ -19,6 +23,10 @@ export const Cart = () => {
   const onRemoveAll = () => {
     dispatch(removeAllFromCart())
     navigate('/home')
+  }
+
+  const onBuy = () => {
+
   }
 
   useEffect(() => {
@@ -37,11 +45,11 @@ export const Cart = () => {
         <>
           <br/><br/><br/><br/>
           <Popup activation={getEditarPago} setActivation={setEditarPago}>
-            <Pago tipo='metodoPago'/>
+            <Pago tipo='metodoPago' setActivation={setEditarPago} setter={setNumTarjeta} />
           </Popup>
 
           <Popup activation={getEditarUbicacion} setActivation={setEditarUbicacion}>
-            <Pago tipo='ubicacion'/>
+            <Pago tipo='ubicacion' setActivation={setEditarUbicacion} setter={setUbicacion} />
           </Popup>
 
           <main className="container">
@@ -51,10 +59,19 @@ export const Cart = () => {
                   <div>
                     <b>Metodo de pago</b>
                     <br/>
-                    &bull;&bull;&bull;&bull;
-                    &bull;&bull;&bull;&bull;
-                    &bull;&bull;&bull;&bull;
-                    &bull;&bull;54
+                    {
+                      getNumTarjeta.length === 16 ?
+                        <>
+                          &bull;&bull;&bull;&bull; 
+                          &bull;&bull;&bull;&bull; 
+                          &bull;&bull;&bull;&bull; 
+                          &bull;&bull;{getNumTarjeta.slice(-2)}
+                        </>
+                      :
+                        <>
+                          No existe tarjeta almacenada
+                        </>
+                    }
                   </div>
                   <button className="yellowButtonCart " onClick={() => setEditarPago(true)}>Editar</button>
                 </div>
@@ -63,7 +80,16 @@ export const Cart = () => {
                   <div>
                     <b>Ubicación</b>
                     <br/>
-                    Diagonal 12 #41-79A
+                    {
+                      getUbicacion !== '' ?
+                        <>
+                          {getUbicacion}
+                        </>
+                      :
+                        <>
+                          No existe ubicación almacenada
+                        </>
+                    }
                   </div>
 
                   <button className="yellowButtonCart" onClick={() => setEditarUbicacion(true)}>Editar</button>
@@ -73,8 +99,8 @@ export const Cart = () => {
                   <span><b>Envío:</b> $ {(getTotal * 0.05).toFixed(2)}<br/>
                   <b>Total:</b> $ {(getTotal + getTotal * 0.05).toFixed(2)}</span>
                 </div>
-                <button className="yellowButtonCart fullRedButtonCart" onClick={() => console.log('comprar')}>Comprar</button>
-                
+                <button className="yellowButtonCart fullRedButtonCart" onClick={() => onBuy()}>Comprar</button>
+
               </div>
               <div className="cart col-12 col-lg-7">
                 <div>

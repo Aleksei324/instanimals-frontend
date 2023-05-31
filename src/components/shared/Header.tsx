@@ -27,9 +27,9 @@ export const Header = () => {
 
             <Link className="spaceHeader" to="/cart">
               <span className="d-none d-xl-inline">Carrito</span>
-              {cart.length > 0 ? <sub> &#40;{cart.length}&#41;</sub> : <></>} 
               <img className="iconLinksHeader" src="/icons/cart_y.png"
                 alt="" title='Carrito' width='20' height='20' />
+              {cart.length > 0 ? <sub> &#40;{cart.length}&#41;</sub> : <></>} 
             </Link>
           </>
           :
