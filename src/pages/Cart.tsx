@@ -10,6 +10,7 @@ import '../styles/Login.css'
 export const Cart = () => {
   const [getEditarPago, setEditarPago] = useState(false)
   const [getEditarUbicacion, setEditarUbicacion] = useState(false)
+  const [up, setUp] = useState(false)
 
   const [getNumTarjeta, setNumTarjeta] = useState(localStorage.getItem('numTarjeta') || '')
   const [getUbicacion, setUbicacion] = useState(localStorage.getItem('direccion') || '')
@@ -35,7 +36,7 @@ export const Cart = () => {
       temp += item.cant * item.ad.price
     }
     setTotal(temp)
-  }, [])
+  }, [cart])
 
   return (
     <div className="onlyFooterG">
@@ -123,9 +124,9 @@ export const Cart = () => {
 
                               <div className="cartReduce">
                                 <div className="yellowButtonCart">
-                                  <button className="cantidadCart" onClick={() => dispatch(changeQuantityCart({ id: item.ad.postID, aumenta: false }))}>-</button>
+                                  <button className="cantidadCart" onClick={() => dispatch(changeQuantityCart({ id: item.ad.postID, aumenta: false }))}> - </button>
                                   <span> {item.cant} </span>
-                                  <button className="cantidadCart" onClick={() => dispatch(changeQuantityCart({ id: item.ad.postID, aumenta: true }))}>+</button>
+                                  <button className="cantidadCart" onClick={() => dispatch(changeQuantityCart({ id: item.ad.postID, aumenta: true }))}> + </button>
                                 </div>
 
                                 <button className="redButtonCart" onClick={() => dispatch(removeFromCart(item.ad.postID))}>Remover</button>
