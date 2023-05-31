@@ -17,7 +17,7 @@ export const Home = () => {
             <br/>
             <br/>
             <br/>
-            <div className="container-fluent">
+            <div className="container-fluent home">
               <div className="row">
 
                 {
@@ -32,23 +32,32 @@ export const Home = () => {
 
                   <div className="welcomeHome componentG container-fluent">
 
-                    <form className="row" role="search" onSubmit={() => onSearch()}>
+                  <div className="row">
+                    <form className="col-12" role="search" onSubmit={() => onSearch()}>
                       <label className='visually-hidden' htmlFor='inputSearchProfile'>Buscar perfil</label>
 
                       <input className="yellowInputTextG searchWelcomeHome" id="inputSearchProfile"
                         value={getSearchValue} onChange={(evt) => setSearchValue(evt.target.value)} 
                         type="search" placeholder="Buscar perfiles" />
                     </form>
+                  </div>
 
-                    <div className="flexG">
-                      <Link title="Ir a mi perfil" className="sidePfpHome" to={`/profile/${userID}`}>
-                        <img className="roundedImagesG" src={picture} alt="Foto de perfil" width='72' height='72' />
-                      </Link>
+                    <div className="row">
+                      <div className="col-12">
+                        <div className="flexG">
+                          <Link title="Ir a mi perfil" className="sidePfpHome" to={`/profile/${userID}`}>
+                            <img className="roundedImagesG" src={picture} alt="Foto de perfil" width='72' height='72' />
+                          </Link>
 
-                      <h2>Buenos días<br/>{name}</h2>
+                          <h2>Buenos días<br/>{name}</h2>
+                        </div>
+                      </div>
                     </div>
 
-                    <p>Tus fotos más recientes:</p>
+                    <div className="row">
+                      <p className="col-12">Tus fotos más recientes:</p>
+                    </div>
+
                     <div className="fotosRecientesHome row g-1">
                       <img className="col-4" src="/placeholders/post-photo-1.jpg" alt='foto reciente' />
                       <img className="col-4" src="/placeholders/post-photo-2.jpg" alt='foto reciente' />

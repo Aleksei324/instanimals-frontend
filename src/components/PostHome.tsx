@@ -12,7 +12,7 @@ export const PostHome = memo( ({data}: postProps) => {
 
   const {likeAction, commentAction, getLiked, getLikes} = usePost(data)
   return (
-    <article className="componentG post container">
+    <article className="componentG post container-fluent">
 
       <div className="titlePost row">
         <div className="col-12 flexG">

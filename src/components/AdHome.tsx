@@ -11,7 +11,7 @@ export const AdHome = memo( ({data}: adProps) => {
 
   const {onAdd, getBought} = useAdHome(data)
   return (
-    <article className="componentG ad container">
+    <article className="componentG ad container-fluent">
       <div className="row">
         <div className="col-12">
           <h4>{data.name}</h4>
