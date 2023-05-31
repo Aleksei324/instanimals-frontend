@@ -7,7 +7,7 @@ import { changePic } from "../../store/userSlice"
 export const useProfile = () => {
 
   const {profileID} = useParams()
-  const {userID} = useSelector( (state: any) => state.userSlice)
+  const {userID, tipo} = useSelector( (state: any) => state.userSlice)
   const dispatch = useDispatch()
 
   const [getExistPage, setExistPage] = useState(true)
@@ -62,6 +62,7 @@ export const useProfile = () => {
     profileID: profileID,
     inputFile: inputFile,
     onChangeInput: onChangeInput,
-    userID: userID
+    userID: userID,
+    tipo: tipo
   }
 }

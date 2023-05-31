@@ -1,4 +1,4 @@
-import { FeedHome, Footer, Header } from "../components";
+import { AdsSideHome, FeedHome, Footer, Header } from "../components";
 import { NoProfileFound } from "./";
 import { useProfile } from "../helpers";
 import '../styles/Profile.css'
@@ -9,7 +9,7 @@ export const Profile = () => {
     getProfileTipo, getProfilePic,
     getProfileDesc, getProfileA1,
     getProfileA2, profileID, 
-    inputFile, onChangeInput, userID } = useProfile()
+    inputFile, onChangeInput, userID, tipo } = useProfile()
   return (
     <>
       <Header/>
@@ -53,8 +53,12 @@ export const Profile = () => {
                 <div className="row g-0 justify-content-center">
                   <div className="col-2" />
                   <div className="col-8">
-                    <FeedHome profileID={profileID} />
-                    <div className="popupBoxG"></div>
+                    {
+                      tipo === 'USER' ?
+                        <FeedHome profileID={profileID} />
+                      :
+                        <AdsSideHome profileID={profileID} />
+                    }
                   </div>
                   <div className="col-2" />
                 </div>
