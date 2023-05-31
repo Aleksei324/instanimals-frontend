@@ -34,7 +34,7 @@ export const useFeed = (profileID: string | undefined) => {
       }
       setPostsArray([...temp])
     }
-  },[])
+  },[profileID])
 
   return getPostsArray
 }

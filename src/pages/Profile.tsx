@@ -1,4 +1,4 @@
-import { FeedHome, Footer, Header, Layout } from "../components";
+import { FeedHome, Footer, Header } from "../components";
 import { NoProfileFound } from "./";
 import { useProfile } from "../helpers";
 import '../styles/Profile.css'
@@ -8,7 +8,8 @@ export const Profile = () => {
   const { getExistPage, getProfileName,
     getProfileTipo, getProfilePic,
     getProfileDesc, getProfileA1,
-    getProfileA2, profileID } = useProfile()
+    getProfileA2, profileID, 
+    inputFile, onChangeInput, userID } = useProfile()
   return (
     <>
       <Header/>
@@ -26,7 +27,12 @@ export const Profile = () => {
                   <div className="componentG col-12">
                     <img className="bannerProfile" alt="Colourful banner" src='/bg/banner-pfp-Oberholster-Venita-pixabay.jpg' />
                     <div className="flexG profileDesc">
-                      <img className="roundedImagesG pfpProfile" src={getProfilePic} alt="big profile picture" width='250' height='250' />
+
+                      <img className="roundedImagesG pfpProfile" src={getProfilePic==='' && profileID === userID ? '/bg/no-pfp.png' : getProfilePic} 
+                        alt="big profile picture" width='250' height='250' onClick={profileID === userID ? () => inputFile.current?.click() : () => {}} />
+                      <input className="ultraHiddenG" type='file' accept="image/png, image/jpeg"
+                        ref={inputFile} onChange={(evt) => onChangeInput(evt.target.files)} />
+
                       <div className="textoProfile">
                         {
                           getProfileTipo === 'USER' ?
