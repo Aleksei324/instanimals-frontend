@@ -10,7 +10,8 @@ export interface postParams {
   },
   pic: string,
   desc: string,
-  likes: number
+  likes: number,
+  liked: boolean
 }
 
 export const useFeed = (profileID: string | undefined) => {

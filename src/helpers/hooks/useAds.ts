@@ -9,7 +9,8 @@ export interface adsParams {
   },
   pic: string,
   name: string,
-  price: number
+  price: number,
+  bought: boolean
 }
 
 export const useAds = (profileID: string | undefined) => {
@@ -24,7 +25,7 @@ export const useAds = (profileID: string | undefined) => {
     else {
       // TODO LLAMAR A LA BASE DE DATOS PARA CONSEGUIR POST DE ESE PERFIL
       const temp = []
-      
+
       for (const post of placeholderAds) {
         if (profileID === post.user.userID) {
           temp.push(post)

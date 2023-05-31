@@ -4,7 +4,6 @@ import { AdHome, feedProps } from ".";
 export const AdsSideHome = ({profileID}: feedProps) => {
 
   const adsArray = useAds(profileID)
-
   return (
     <div role="feed">
       {

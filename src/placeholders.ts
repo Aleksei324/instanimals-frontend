@@ -1,4 +1,4 @@
-import { adsParams, stateParams } from "./helpers"
+import { adsParams, postParams, stateParams } from "./helpers"
 
 
 export const placeholderProfiles = [
@@ -31,7 +31,7 @@ export const placeholderProfiles = [
 ]
 
 
-export const placeholderPosts = [
+export const placeholderPosts: postParams[] = [
   {
     postID: '1',
     user: {
@@ -41,7 +41,8 @@ export const placeholderPosts = [
     },
     pic: '/placeholders/post-photo-5.jpg',
     desc: 'Orion es un amor de perrito',
-    likes: 72
+    likes: 72,
+    liked: false
   },
   {
     postID: '2',
@@ -52,7 +53,8 @@ export const placeholderPosts = [
     },
     pic: '/placeholders/post-photo-1.jpg',
     desc: 'Probando mi nueva cajita',
-    likes: 500
+    likes: 500,
+    liked: true
   },
   {
     postID: '3',
@@ -63,7 +65,8 @@ export const placeholderPosts = [
     },
     pic: '/placeholders/post-photo-3.jpg',
     desc: 'Cortecito pal rey que tuve hoy en la mañanita',
-    likes: 400
+    likes: 400,
+    liked: false
   },
   {
     postID: '4',
@@ -74,7 +77,8 @@ export const placeholderPosts = [
     },
     pic: '/placeholders/post-photo-4.jpg',
     desc: 'Descansando en mi cesped favorito',
-    likes: 550
+    likes: 550,
+    liked: false
   },
   {
     postID: '5',
@@ -85,7 +89,8 @@ export const placeholderPosts = [
     },
     pic: '/placeholders/post-photo-2.jpg',
     desc: 'Levantado y listo para arañar muebles',
-    likes: 60
+    likes: 60,
+    liked: false
   }
 ]
 
@@ -99,7 +104,8 @@ export const placeholderAds: adsParams[] = [
     },
     pic: '/placeholders/post-photo-1.jpg',
     name: 'Juguete para gato tipo pez',
-    price: 15000
+    price: 15000,
+    bought: false
   },
   {
     postID: '2',
@@ -109,7 +115,8 @@ export const placeholderAds: adsParams[] = [
     },
     pic: '/placeholders/post-photo-2.jpg',
     name: 'Comida para gato marca adulto',
-    price: 11000
+    price: 11000,
+    bought: false
   },
   {
     postID: '3',
@@ -119,7 +126,8 @@ export const placeholderAds: adsParams[] = [
     },
     pic: '/placeholders/post-photo-3.jpg',
     name: 'Collar para perro',
-    price: 9000
+    price: 9000,
+    bought: false
   },
   {
     postID: '4',
@@ -129,7 +137,8 @@ export const placeholderAds: adsParams[] = [
     },
     pic: '/placeholders/post-photo-4.jpg',
     name: 'Alimento vegetariano para gatitos',
-    price: 16000
+    price: 16000,
+    bought: false
   }
 ]
 

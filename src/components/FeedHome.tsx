@@ -8,7 +8,6 @@ export interface feedProps {
 export const FeedHome = ({profileID}: feedProps) => {
 
   const postsArray = useFeed(profileID)
-
   return (
     <div role="feed">
       {

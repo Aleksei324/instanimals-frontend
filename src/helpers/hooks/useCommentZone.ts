@@ -13,7 +13,7 @@ export const useCommentZone = (id: string, max: number, datos: postParams) => {
   const [getCommentsArray, setCommentsArray] = useState<stateParams[]>([])
   const [inputText, setInputText] = useState('')
   const [getLikes, setLikes] = useState(datos.likes)
-  const [getLiked, setLiked] = useState(false)
+  const [getLiked, setLiked] = useState(datos.liked)
   const {name} = useSelector( (state: any) => state.userSlice)
 
   const newCommentCreated = () => {
@@ -44,8 +44,6 @@ export const useCommentZone = (id: string, max: number, datos: postParams) => {
 
   useEffect(() => {
     // TODO: OBTENER COMENTARIOS CON API
-    setLiked(false)
-
     const temp = [...placeholderComments]
 
     while (temp.length > max) {
