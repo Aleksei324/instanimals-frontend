@@ -2,12 +2,13 @@ import { Link, Navigate } from "react-router-dom";
 import { AdsSideHome, FeedHome, Layout } from "../components";
 import { useHome } from "../helpers";
 import "../styles/home.css";
+import { Key } from "react";
 
 export const Home = () => {
 
   const { userID, name, picture,
-    tipo, getSearchValue,
-    setSearchValue, onSearch} = useHome()
+    tipo, getSearchValue, setSearchValue,
+    onSearch, recentImages} = useHome()
   return (
     <>
       {
@@ -59,9 +60,11 @@ export const Home = () => {
                     </div>
 
                     <div className="fotosRecientesHome row g-1">
-                      <img className="col-4" src="/placeholders/post-photo-1.jpg" alt='foto reciente' />
-                      <img className="col-4" src="/placeholders/post-photo-2.jpg" alt='foto reciente' />
-                      <img className="col-4" src="/placeholders/post-photo-3.jpg" alt='foto reciente' />
+                      {
+                        recentImages.map((image: string, key: Key) => {
+                          return <img key={key} className="col-4" src={image} alt='Foto reciente' />
+                        })
+                      }
                     </div>
                   </div>
 

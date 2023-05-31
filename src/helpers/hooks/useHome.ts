@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import { placeholderProfiles } from "../../placeholders"
@@ -6,6 +6,7 @@ import { placeholderProfiles } from "../../placeholders"
 export const useHome = () => {
   const {userID, name, picture, tipo} = useSelector( (state: any) => state.userSlice)
   const [getSearchValue, setSearchValue] = useState('')
+  const [recentImages, setRecentImages] = useState<string[]>([])
   const navigate = useNavigate()
 
   const onSearch = () => {
@@ -20,6 +21,16 @@ export const useHome = () => {
     }
   }
 
+  useEffect(() => {
+    const temp = [
+      '/placeholders/post-photo-5.jpg',
+      '/placeholders/post-photo-4.jpg',
+      '/placeholders/post-photo-3.jpg'
+    ]
+
+    setRecentImages([...temp])
+  },[])
+
   return {
     userID: userID,
     name: name,
@@ -27,6 +38,7 @@ export const useHome = () => {
     tipo: tipo,
     getSearchValue: getSearchValue,
     setSearchValue: setSearchValue,
-    onSearch: onSearch
+    onSearch: onSearch,
+    recentImages: recentImages
   }
 }
