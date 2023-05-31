@@ -28,7 +28,7 @@ export const UploadImageHome = () => {
           value={getValueInput}
           onChange={(evt) => setValueInput(evt.target.value)}
           onFocus={() => {setInteracted(true)}}
-          maxLength={50} />
+          maxLength={50} autoComplete="off" />
 
         {
           getInteracted ?

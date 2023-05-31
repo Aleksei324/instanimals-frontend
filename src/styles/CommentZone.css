@@ -2,3 +2,7 @@
   text-align: left;
   margin: 1rem;
 }
+
+.myComment {
+  color: var(--error-colour);
+}

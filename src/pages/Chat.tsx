@@ -1,10 +1,10 @@
-import { Header, CommentZone } from "../components";
-import { useChat } from "../helpers";
+import { Header } from "../components"
+import { useChat } from "../helpers"
 import '../styles/Chat.css'
 
 export const Chat = () => {
 
-  const {inputText, setInputText, buttonAction} = useChat()
+  const {inputText, setInputText, buttonAction, getCommentsArray, name} = useChat(18)
   return (
     <div>
       <Header/>
@@ -12,7 +12,15 @@ export const Chat = () => {
         <div className="row">
           <div className="chatComments col-12">
             <div className="gradientChat" aria-hidden="true" />
-            <CommentZone id_post="" nuevoComentarioAbajo={true} maxComentarios={18} /> {/** TODO POST ID */}
+            <div className="commentZone">
+              {
+                getCommentsArray.map( (comment, key) => {
+                  return (
+                    <p key={key}><b className={comment.name === name ? 'myComment':''}>{comment.name}: </b>{comment.text}</p>
+                  )
+                })
+              }
+            </div>
           </div>
         </div>
         <div className="row">
@@ -28,9 +36,9 @@ export const Chat = () => {
           <form className="chatInput inputAndButtonCommentG col-12" onSubmit={(event) => {event.preventDefault(); buttonAction()} }>
             <label className="visually-hidden" htmlFor="inputChat">Añadir mensaje en el chat</label>
 
-            <input className="col-12 col-md-8 col-lg-9 col-xl-10" type="text" 
-              id="inputChat" value={inputText} 
-              onChange={(x) => setInputText(x.target.value)} 
+            <input className="col-12 col-md-8 col-lg-9 col-xl-10" type="text"
+              id="inputChat" value={inputText} autoComplete="off"
+              onChange={(x) => setInputText(x.target.value)}
               placeholder="Publica un mensaje en el chat general..." 
               maxLength={50} />
 
@@ -40,4 +48,4 @@ export const Chat = () => {
       </main>
     </div>
   )
-};
+}

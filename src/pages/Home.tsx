@@ -38,7 +38,7 @@ export const Home = () => {
 
                       <input className="yellowInputTextG searchWelcomeHome" id="inputSearchProfile"
                         value={getSearchValue} onChange={(evt) => setSearchValue(evt.target.value)} 
-                        type="search" placeholder="Buscar perfiles" />
+                        type="search" placeholder="Buscar perfiles" autoComplete="off" />
                     </form>
                   </div>
 
