@@ -9,7 +9,7 @@ export const Profile = () => {
     getProfileTipo, getProfilePic,
     getProfileDesc, getProfileA1,
     getProfileA2, profileID, 
-    inputFile, onChangeInput, userID, tipo } = useProfile()
+    inputFile, onChangeInput, userID } = useProfile()
   return (
     <>
       <Header/>
@@ -54,7 +54,7 @@ export const Profile = () => {
                   <div className="col-2" />
                   <div className="col-8">
                     {
-                      tipo === 'USER' ?
+                      getProfileTipo === 'USER' ?
                         <FeedHome profileID={profileID} />
                       :
                         <AdsSideHome profileID={profileID} />

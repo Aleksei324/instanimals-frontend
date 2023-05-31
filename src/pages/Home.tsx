@@ -68,7 +68,7 @@ export const Home = () => {
                     </div>
                   </div>
 
-                  <div className="d-none d-md-block">
+                  <div className="d-none d-md-block visible">
                     <AdsSideHome profileID='' />
                   </div>
                 </div>
