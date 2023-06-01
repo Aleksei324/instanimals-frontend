@@ -38,12 +38,15 @@ export const useChat = (max: number) => {
     socket.on('disconnect', () => {
       console.log('Desconectado del servidor')
     })
+    socket.on('init-array', (payload) => {
+      setCommentsArray(JSON.parse(payload))
+    })
     socket.on('mensaje-nuevo', (payload) => {
       newCommentCreated(payload.name, payload.text)
     })
 
     const temp = [...getCommentsArray]
-    
+
     while (temp.length > max) {
       temp.splice(0, 1)
     }
@@ -54,6 +57,7 @@ export const useChat = (max: number) => {
       socket.off('connect')
       socket.off('disconnect')
       socket.off('mensaje-nuevo')
+      socket.off('init-array')
     }
   }, [])
 
